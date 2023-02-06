@@ -1,0 +1,1503 @@
+Using username "pupil".
+Authenticating with public key "info@cooksoft.com.tr"
+Linux db01 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Feb  5 15:51:40 2023 from 192.168.56.1
+
+ ┌── pupil@db01 ── ~ ─
+ └─$ history
+    1  su -
+    2  ip a
+    3  su -
+    4  sudo su -
+    5  ssh db02
+    6  cat ~/.ssh/id_rsa.pub
+    7  cat /etc/hosts
+    8  ssh db02
+    9  cat /etc/hosts
+   10  cat ~/.ssh/id_rsa.pub
+   11  ssh db02
+   12  sudo su -
+   13  cat /etc/os-release
+   14  sudo su -
+   15  psql
+   16  history
+   17  sudo su-
+   18  sudo su -
+   19  su - root
+   20  history
+
+ ┌── pupil@db01 ── ~ ─
+ └─$ su - root
+Password:
+
+ ┌── root@db01 ── ~ ─
+ └─# history
+    1  ip a
+    2  vim /etc/network/interfaces
+    3  vi /etc/network/interfaces
+    4  vi /etc/network/interfaces
+    5  vim /etc/network/interfaces
+    6  top
+    7  cat /etc/hosts
+    8  reboot
+    9  su - cooksoft
+   10  cat /etc/shadow
+   11  su - postgres
+   12  su - postgres
+   13  su - postgres
+   14  su postgres
+   15  su - postgres
+   16  su - postgres
+   17  apt list --installed
+   18  apt list --installed | grep postg
+   19  apt list --installed | grep copg
+   20  su - postgres
+   21  cat .bashrc
+   22  su - postgres
+   23  cp /home/pupil/.bashrc /home/postgres/.
+   24  su - postgres
+   25  userdel postgres
+   26  rm -rf /home/postgres
+   27  su - postgres
+   28  vim /etc/hosts
+   29  apt update
+   30  apt upgrade
+   31  reboot
+   32  apt autoremove
+   33  apt update
+   34  apt upgrade
+   35  apt autoremove
+   36  reboot
+   37  cat /etc/hsots
+   38  cat /etc/hosts
+   39  apt list --installed
+   40  consul
+   41  apt update
+   42  apt upgrade
+   43  apt update
+   44  apt upgrade
+   45  apt autoremove
+   46  reboot
+   47  apt update
+   48  apt autoremove
+   49  blkid
+   50  lsblk
+   51  cd /
+   52  ls -l
+   53  mkdir disk2
+   54  blkid
+   55  vim /etc/fstab
+   56  mount a
+   57  mount all
+   58  mount -a
+   59  lsblk
+   60  cd /disk2/
+   61  ls -l
+   62  cd /boot/
+   63  ls -l
+   64  cd grub/
+   65  ls -l
+   66  vim grub.cfg
+   67  lsblk
+   68  parted /dev/sdb
+   69  parted /dev/sda
+   70  lsblk
+   71  free -h
+   72  update-grub
+   73  grub-install /dev/sdb
+   74  update-grub
+   75  reboot
+   76  update-grub
+   77  apt autoremove
+   78  grub-install /dev/sda
+   79  reboot
+   80  update-grub
+   81  vim /etc/fstab
+   82  lsblk
+   83  grub-install /dev/sdb
+   84  reboot
+   85  reboot
+   86  blkid
+   87  update-grub
+   88  grub-install /dev/sda
+   89  lsblk
+   90  free -h
+   91  swapoff
+   92  swapoff -a
+   93  free -h
+   94  parted /dev/sda
+   95  lsblk
+   96  growpart /dev/sda 1
+   97  resize2fs /dev/sda1
+   98  lsblk
+   99  zerofree
+  100  apt install zerofree
+  101  zerofree -v /dev/sda1
+  102  reboot
+  103  zerofree -v /dev/sda1
+  104  df -h
+  105  reboot
+  106  lsblk
+  107  fallocate -l 1G /swapfile
+  108  chmod 600 /swapfile
+  109  mkswap /swapfile
+  110  swapon /swapfile
+  111  free -h
+  112  vim /etc/fstab
+  113  reboot
+  114  lsb_release -cs
+  115  cd /etc/apt/sources.list.d
+  116  ls
+  117  ls -l
+  118  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc~
+  119  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  120  echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg                                                                                         main" > /etc/apt/sources.list.d/pgdg.list
+  121  cat  /etc/apt/sources.list.d/pgdg.list
+  122  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | su                                                                                        do apt-key add -
+  123  apt update
+  124  apt upgrade
+  125  apt install postgresql-15
+  126  cd ..
+  127  cd ..
+  128  cd ..
+  129  cd ..
+  130  su - postgres
+  131  free -h
+  132  cd root
+  133  pg_lsclauster
+  134  pg_lsclausters
+  135  pg_lsclusters
+  136  which pg_lsclusters
+  137  vim /usr/bin/pg_lsclusters
+  138  su - postgres
+  139  mkdir -p /pg_data/15/kampg
+  140  chown -R postgres: /pg_data
+  141  chmod 700 -R /pg_data
+  142  ls
+  143  cd /pg_data/15/kampg
+  144  ls
+  145  pg_dropcluster 15 kampg
+  146  pg_dropcluster 15 kampg --stop
+  147  cd root
+  148  pg_dropcluster 15 main --stop
+  149  /usr/lib/postgresql/15/bin
+  150  cd /usr/lib/postgresql/15/bin
+  151  ls
+  152  cd ..
+  153  logout
+  154  history
+  155  su - postgres
+  156   pg_createcluster 15 main -D /pg_data/15/main -- --data-checksums
+  157   pg_lsclusters
+  158   pg_createcluster 15 kampg -D /pg_data/15/main -- --data-checksums
+  159  mkdir -p /pg_data/15/main
+  160  chown -R postgres: /pg_data
+  161  cd /pg_data/15/main
+  162  pg_lsclusters
+  163  ls
+  164  systemctl start postgresql@15-kampg
+  165  systemctl start postgresql@15-main
+  166  systemctl satust postgresql@15-main
+  167  systemctl status postgresql@15-main
+  168  systemctl enable postgresql@15-main
+  169  pg_lsclusters
+  170  reboot
+  171  pg_lsclusters
+  172  systemctl status postgresql@15-main
+  173  su - postgres
+  174  history
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgresql
+su: user postgresql does not exist or the user entry does not contain all the re                                                                                        quired fields
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ history
+    1  psql
+    2  ps -ef | grep postgres
+    3  ls -lh /user/lib/postgresql
+    4  logout
+    5  psql
+    6  clear
+    7  cd root
+    8  logout
+    9  history
+   10  psql
+   11  cd /usr/lib/postgresql
+   12  cd ..
+   13  cd ..
+   14  cd ..
+   15  cd ..
+   16  cd page_data
+   17  cd pg_data
+   18  ls
+   19  cd 15
+   20  ls
+   21  cd kampg
+   22  clear
+   23  /usr/lib/postgresql/15/bin/initdb --pgdata=/pg_data-checksums
+   24  ps -ef | grep postgres
+   25  The files belonging to this database system will be owned by user "postgr                                                                                        es".
+   26  This user must also own the server process.
+   27  The database cluster will be initialized with locale "en_US.UTF-8".
+   28  The default database encoding has accordingly been set to "UTF8".
+   29  The default text search configuration will be set to "english".
+   30  Data page checksums are disabled.
+   31  creating director
+   32  /usr/lib/postgresql/15/bin/initdb --pgdata=/pg_data-checksums
+   33  pg_createcluster 15 main -D /pg_data/15/main -- --data-checksums
+   34  pg_lsclusters
+   35  systemctl start postgresql@15-main
+   36  logout
+   37  vim /var/lib/postgresql/ .bash_profile
+   38  vim /var/lib/postgresql/ .bash_profile
+   39  vim /var/lib/postgresql/ .bash_profile
+   40  vim /var/lib/postgresql/ .bash_profile
+   41  vim /var/lib/postgresql/ .bash_profile
+   42  vim /var/lib/postgresql/.bash_profile
+   43  pg_controldata
+   44  pg_controldata
+   45  logout
+   46  pg_waldump
+   47  ls
+   48  pg_lsclusters
+   49  vim /var/lib/postgresql/.bash_profile
+   50  vim /var/lib/postgresql/.bash_profile
+   51  ls
+   52  /pg_data/15/main
+   53  cd /pg_data/15/main
+   54  ls
+   55  ls -l
+   56  cd global
+   57  ls
+   58  ls -l
+   59  cd ..
+   60  cd base
+   61  ls -l
+   62  cd 1
+   63  ls -l
+   64  su - postgres
+   65  cd postgres
+   66  su - postgres
+   67  cd pg_wal
+   68  cd ..
+   69  cd ..
+   70  ls -l
+   71  cd pg_wal
+   72  ls -l
+   73  cd ..
+   74  cd PG_VERSION
+   75  cd PG_VERSION
+   76  cd PG_VERSION
+   77  cat postmaster.pid
+   78  cat postmaster.opts
+   79  cd pg_tblspc
+   80  ls -l
+   81  history
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# history
+postgres-# h
+postgres-# H
+postgres-# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ \l
+-bash: l: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ ls
+G
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ cd $PGDATA
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls -l
+total 84
+drwx------ 5 postgres postgres 4096 Feb  5 15:24 base
+drwx------ 2 postgres postgres 4096 Feb  6 09:39 global
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  6 09:41 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  5 15:23 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  6 09:36 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  5 15:23 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  5 15:23 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_xact
+-rw------- 1 postgres postgres   88 Feb  5 15:23 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  6 09:36 postmaster.opts
+-rw------- 1 postgres postgres   96 Feb  6 09:36 postmaster.pid
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cat postmaster.opts
+/usr/lib/postgresql/15/bin/postgres "-D" "/pg_data/15/main" "-c" "config_file=/etc/postgresql/15/main/postgresql.conf"
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$
+----------
+
+Using username "pupil".
+Authenticating with public key "info@cooksoft.com.tr"
+Linux db01 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Feb  5 15:51:40 2023 from 192.168.56.1
+
+ ┌── pupil@db01 ── ~ ─
+ └─$ history
+    1  su -
+    2  ip a
+    3  su -
+    4  sudo su -
+    5  ssh db02
+    6  cat ~/.ssh/id_rsa.pub
+    7  cat /etc/hosts
+    8  ssh db02
+    9  cat /etc/hosts
+   10  cat ~/.ssh/id_rsa.pub
+   11  ssh db02
+   12  sudo su -
+   13  cat /etc/os-release
+   14  sudo su -
+   15  psql
+   16  history
+   17  sudo su-
+   18  sudo su -
+   19  su - root
+   20  history
+
+ ┌── pupil@db01 ── ~ ─
+ └─$ su - root
+Password:
+
+ ┌── root@db01 ── ~ ─
+ └─# history
+    1  ip a
+    2  vim /etc/network/interfaces
+    3  vi /etc/network/interfaces
+    4  vi /etc/network/interfaces
+    5  vim /etc/network/interfaces
+    6  top
+    7  cat /etc/hosts
+    8  reboot
+    9  su - cooksoft
+   10  cat /etc/shadow
+   11  su - postgres
+   12  su - postgres
+   13  su - postgres
+   14  su postgres
+   15  su - postgres
+   16  su - postgres
+   17  apt list --installed
+   18  apt list --installed | grep postg
+   19  apt list --installed | grep copg
+   20  su - postgres
+   21  cat .bashrc
+   22  su - postgres
+   23  cp /home/pupil/.bashrc /home/postgres/.
+   24  su - postgres
+   25  userdel postgres
+   26  rm -rf /home/postgres
+   27  su - postgres
+   28  vim /etc/hosts
+   29  apt update
+   30  apt upgrade
+   31  reboot
+   32  apt autoremove
+   33  apt update
+   34  apt upgrade
+   35  apt autoremove
+   36  reboot
+   37  cat /etc/hsots
+   38  cat /etc/hosts
+   39  apt list --installed
+   40  consul
+   41  apt update
+   42  apt upgrade
+   43  apt update
+   44  apt upgrade
+   45  apt autoremove
+   46  reboot
+   47  apt update
+   48  apt autoremove
+   49  blkid
+   50  lsblk
+   51  cd /
+   52  ls -l
+   53  mkdir disk2
+   54  blkid
+   55  vim /etc/fstab
+   56  mount a
+   57  mount all
+   58  mount -a
+   59  lsblk
+   60  cd /disk2/
+   61  ls -l
+   62  cd /boot/
+   63  ls -l
+   64  cd grub/
+   65  ls -l
+   66  vim grub.cfg
+   67  lsblk
+   68  parted /dev/sdb
+   69  parted /dev/sda
+   70  lsblk
+   71  free -h
+   72  update-grub
+   73  grub-install /dev/sdb
+   74  update-grub
+   75  reboot
+   76  update-grub
+   77  apt autoremove
+   78  grub-install /dev/sda
+   79  reboot
+   80  update-grub
+   81  vim /etc/fstab
+   82  lsblk
+   83  grub-install /dev/sdb
+   84  reboot
+   85  reboot
+   86  blkid
+   87  update-grub
+   88  grub-install /dev/sda
+   89  lsblk
+   90  free -h
+   91  swapoff
+   92  swapoff -a
+   93  free -h
+   94  parted /dev/sda
+   95  lsblk
+   96  growpart /dev/sda 1
+   97  resize2fs /dev/sda1
+   98  lsblk
+   99  zerofree
+  100  apt install zerofree
+  101  zerofree -v /dev/sda1
+  102  reboot
+  103  zerofree -v /dev/sda1
+  104  df -h
+  105  reboot
+  106  lsblk
+  107  fallocate -l 1G /swapfile
+  108  chmod 600 /swapfile
+  109  mkswap /swapfile
+  110  swapon /swapfile
+  111  free -h
+  112  vim /etc/fstab
+  113  reboot
+  114  lsb_release -cs
+  115  cd /etc/apt/sources.list.d
+  116  ls
+  117  ls -l
+  118  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc~
+  119  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  120  echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg                                                                                         main" > /etc/apt/sources.list.d/pgdg.list
+  121  cat  /etc/apt/sources.list.d/pgdg.list
+  122  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | su                                                                                        do apt-key add -
+  123  apt update
+  124  apt upgrade
+  125  apt install postgresql-15
+  126  cd ..
+  127  cd ..
+  128  cd ..
+  129  cd ..
+  130  su - postgres
+  131  free -h
+  132  cd root
+  133  pg_lsclauster
+  134  pg_lsclausters
+  135  pg_lsclusters
+  136  which pg_lsclusters
+  137  vim /usr/bin/pg_lsclusters
+  138  su - postgres
+  139  mkdir -p /pg_data/15/kampg
+  140  chown -R postgres: /pg_data
+  141  chmod 700 -R /pg_data
+  142  ls
+  143  cd /pg_data/15/kampg
+  144  ls
+  145  pg_dropcluster 15 kampg
+  146  pg_dropcluster 15 kampg --stop
+  147  cd root
+  148  pg_dropcluster 15 main --stop
+  149  /usr/lib/postgresql/15/bin
+  150  cd /usr/lib/postgresql/15/bin
+  151  ls
+  152  cd ..
+  153  logout
+  154  history
+  155  su - postgres
+  156   pg_createcluster 15 main -D /pg_data/15/main -- --data-checksums
+  157   pg_lsclusters
+  158   pg_createcluster 15 kampg -D /pg_data/15/main -- --data-checksums
+  159  mkdir -p /pg_data/15/main
+  160  chown -R postgres: /pg_data
+  161  cd /pg_data/15/main
+  162  pg_lsclusters
+  163  ls
+  164  systemctl start postgresql@15-kampg
+  165  systemctl start postgresql@15-main
+  166  systemctl satust postgresql@15-main
+  167  systemctl status postgresql@15-main
+  168  systemctl enable postgresql@15-main
+  169  pg_lsclusters
+  170  reboot
+  171  pg_lsclusters
+  172  systemctl status postgresql@15-main
+  173  su - postgres
+  174  history
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgresql
+su: user postgresql does not exist or the user entry does not contain all the re                                                                                        quired fields
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ history
+    1  psql
+    2  ps -ef | grep postgres
+    3  ls -lh /user/lib/postgresql
+    4  logout
+    5  psql
+    6  clear
+    7  cd root
+    8  logout
+    9  history
+   10  psql
+   11  cd /usr/lib/postgresql
+   12  cd ..
+   13  cd ..
+   14  cd ..
+   15  cd ..
+   16  cd page_data
+   17  cd pg_data
+   18  ls
+   19  cd 15
+   20  ls
+   21  cd kampg
+   22  clear
+   23  /usr/lib/postgresql/15/bin/initdb --pgdata=/pg_data-checksums
+   24  ps -ef | grep postgres
+   25  The files belonging to this database system will be owned by user "postgr                                                                                        es".
+   26  This user must also own the server process.
+   27  The database cluster will be initialized with locale "en_US.UTF-8".
+   28  The default database encoding has accordingly been set to "UTF8".
+   29  The default text search configuration will be set to "english".
+   30  Data page checksums are disabled.
+   31  creating director
+   32  /usr/lib/postgresql/15/bin/initdb --pgdata=/pg_data-checksums
+   33  pg_createcluster 15 main -D /pg_data/15/main -- --data-checksums
+   34  pg_lsclusters
+   35  systemctl start postgresql@15-main
+   36  logout
+   37  vim /var/lib/postgresql/ .bash_profile
+   38  vim /var/lib/postgresql/ .bash_profile
+   39  vim /var/lib/postgresql/ .bash_profile
+   40  vim /var/lib/postgresql/ .bash_profile
+   41  vim /var/lib/postgresql/ .bash_profile
+   42  vim /var/lib/postgresql/.bash_profile
+   43  pg_controldata
+   44  pg_controldata
+   45  logout
+   46  pg_waldump
+   47  ls
+   48  pg_lsclusters
+   49  vim /var/lib/postgresql/.bash_profile
+   50  vim /var/lib/postgresql/.bash_profile
+   51  ls
+   52  /pg_data/15/main
+   53  cd /pg_data/15/main
+   54  ls
+   55  ls -l
+   56  cd global
+   57  ls
+   58  ls -l
+   59  cd ..
+   60  cd base
+   61  ls -l
+   62  cd 1
+   63  ls -l
+   64  su - postgres
+   65  cd postgres
+   66  su - postgres
+   67  cd pg_wal
+   68  cd ..
+   69  cd ..
+   70  ls -l
+   71  cd pg_wal
+   72  ls -l
+   73  cd ..
+   74  cd PG_VERSION
+   75  cd PG_VERSION
+   76  cd PG_VERSION
+   77  cat postmaster.pid
+   78  cat postmaster.opts
+   79  cd pg_tblspc
+   80  ls -l
+   81  history
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# history
+postgres-# h
+postgres-# H
+postgres-# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ \l
+-bash: l: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ ls
+G
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ cd $PGDATA
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls -l
+total 84
+drwx------ 5 postgres postgres 4096 Feb  5 15:24 base
+drwx------ 2 postgres postgres 4096 Feb  6 09:39 global
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  6 09:41 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  5 15:23 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  6 09:36 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  5 15:23 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  5 15:23 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_xact
+-rw------- 1 postgres postgres   88 Feb  5 15:23 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  6 09:36 postmaster.opts
+-rw------- 1 postgres postgres   96 Feb  6 09:36 postmaster.pid
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cat postmaster.opts
+/usr/lib/postgresql/15/bin/postgres "-D" "/pg_data/15/main" "-c" "config_file=/etc/postgresql/15/main/postgresql.conf"
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd /etc
+
+ ┌── postgres@db01 ── /etc ─
+ └─$ ls -l
+total 812
+-rw-r--r-- 1 root     root      2981 Dec  3  2021 adduser.conf
+-rw-r--r-- 1 root     root        44 Dec  3  2021 adjtime
+drwxr-xr-x 2 root     root     20480 Feb  5 11:25 alternatives
+-rw-r--r-- 1 root     root       401 Feb  6  2021 anacrontab
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 apache2
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 apparmor
+drwxr-xr-x 7 root     root      4096 Feb  3 14:23 apparmor.d
+drwxr-xr-x 8 root     root      4096 Feb  5 10:44 apt
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 avahi
+-rw-r--r-- 1 root     root      1994 Aug  4  2021 bash.bashrc
+-rw-r--r-- 1 root     root        45 Jan 25  2020 bash_completion
+-rw-r--r-- 1 root     root       367 Jul 29  2019 bindresvport.blacklist
+drwxr-xr-x 2 root     root      4096 Jul 13  2021 binfmt.d
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 bluetooth
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 ca-certificates
+-rw-r--r-- 1 root     root      5662 Dec  3  2021 ca-certificates.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 console-setup
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 cron.d
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 cron.daily
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 cron.hourly
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 cron.monthly
+-rw-r--r-- 1 root     root      1042 Feb 23  2021 crontab
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 cron.weekly
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 dbus-1
+-rw-r--r-- 1 root     root      2969 Jun 10  2021 debconf.conf
+-rw-r--r-- 1 root     root         5 Dec  9 22:15 debian_version
+drwxr-xr-x 3 root     root      4096 Feb  3 14:23 default
+-rw-r--r-- 1 root     root       604 Jun 26  2016 deluser.conf
+drwxr-xr-x 4 root     root      4096 Feb  3 14:23 dhcp
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 dictionaries-common
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 discover.conf.d
+-rw-r--r-- 1 root     root       346 Jan 15  2018 discover-modprobe.conf
+drwxr-xr-x 4 root     root      4096 Feb  3 14:23 dpkg
+-rw-r--r-- 1 root     root       685 Jun  7  2021 e2scrub.conf
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 emacs
+-rw-r--r-- 1 root     root         0 Dec  3  2021 environment
+-rw-r--r-- 1 root     root      1816 Dec 27  2019 ethertypes
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 fonts
+-rw-r--r-- 1 root     root       640 Feb  3 17:35 fstab
+-rw-r--r-- 1 root     root      2584 Feb  1  2020 gai.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 groff
+-rw-r--r-- 1 root     root       823 Feb  5 11:24 group
+-rw-r--r-- 1 root     root       815 Feb  5 11:24 group-
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 grub.d
+-rw-r----- 1 root     shadow     694 Feb  5 11:24 gshadow
+-rw-r----- 1 root     shadow     686 Feb  5 11:24 gshadow-
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 gss
+-rw-r--r-- 1 root     root      4436 Dec 16  2020 hdparm.conf
+-rw-r--r-- 1 root     root         9 Aug  7  2006 host.conf
+-rw-r--r-- 1 root     root         5 Dec  3  2021 hostname
+-rw-r--r-- 1 root     root       361 Dec  8  2021 hosts
+-rw-r--r-- 1 root     root       411 Dec  3  2021 hosts.allow
+-rw-r--r-- 1 root     root       711 Dec  3  2021 hosts.deny
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 ifplugd
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 init.d
+drwxr-xr-x 5 root     root      4096 Dec  3  2021 initramfs-tools
+-rw-r--r-- 1 root     root      1748 Dec  8  2020 inputrc
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 iproute2
+-rw-r--r-- 1 root     root        27 Oct  3  2021 issue
+-rw-r--r-- 1 root     root        20 Oct  3  2021 issue.net
+drwxr-xr-x 5 root     root      4096 Dec  3  2021 kernel
+-rw-r--r-- 1 root     root       144 Dec  3  2021 kernel-img.conf
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 ldap
+-rw-r--r-- 1 root     root     22323 Feb  5 11:25 ld.so.cache
+-rw-r--r-- 1 root     root        34 Jul 29  2019 ld.so.conf
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 ld.so.conf.d
+-rw-r--r-- 1 root     root       191 Jan  6  2021 libaudit.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 libibverbs.d
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 libnl-3
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 lighttpd
+-rw-r--r-- 1 root     root      2996 Oct  2  2021 locale.alias
+-rw-r--r-- 1 root     root      9391 Feb  3 14:23 locale.gen
+lrwxrwxrwx 1 root     root        35 Feb  3 14:23 localtime -> /usr/share/zoneinfo/Europe/Istanbul
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 logcheck
+-rw-r--r-- 1 root     root     10477 Feb  7  2020 login.defs
+-rw-r--r-- 1 root     root       494 Feb 28  2021 logrotate.conf
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 logrotate.d
+-r--r--r-- 1 root     root        33 Dec  3  2021 machine-id
+-rw-r--r-- 1 root     root       111 Nov 20  2020 magic
+-rw-r--r-- 1 root     root       111 Nov 20  2020 magic.mime
+-rw-r--r-- 1 root     root      3375 Feb  3 14:24 mailcap
+-rw-r--r-- 1 root     root       449 Feb 25  2021 mailcap.order
+-rw-r--r-- 1 root     root      5215 Feb 19  2021 manpath.config
+-rw-r--r-- 1 root     root     70481 Jan 16  2021 mime.types
+-rw-r--r-- 1 root     root       812 Jun  7  2021 mke2fs.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 modprobe.d
+-rw-r--r-- 1 root     root       195 Dec  3  2021 modules
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 modules-load.d
+-rw-r--r-- 1 root     root       286 Oct  3  2021 motd
+lrwxrwxrwx 1 root     root        19 Dec  3  2021 mtab -> ../proc/self/mounts
+-rw-r--r-- 1 root     root     10056 Dec  2  2020 nanorc
+-rw-r--r-- 1 root     root       767 Dec 31  2020 netconfig
+drwxr-xr-x 7 root     root      4096 Dec  3  2021 network
+-rw-r--r-- 1 root     root        60 Dec  3  2021 networks
+-rwxr-xr-x 1 root     root       228 Jul 20  2021 nftables.conf
+-rw-r--r-- 1 root     root       510 Dec  3  2021 nsswitch.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 opt
+lrwxrwxrwx 1 root     root        21 Dec  9 22:15 os-release -> ../usr/lib/os-release
+-rw-r--r-- 1 root     root       552 Jan 31  2021 pam.conf
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 pam.d
+drwxr-xr-x 2 root     root      4096 Dec  2  2018 parallel
+-rw-r--r-- 1 root     root      1615 Feb  5 11:24 passwd
+-rw-r--r-- 1 root     root      1588 Feb  5 11:24 passwd-
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 perl
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 polkit-1
+drwxr-xr-x 3 postgres postgres  4096 Feb  5 15:23 postgresql
+drwxr-xr-x 3 root     root      4096 Feb  5 11:24 postgresql-common
+-rw-r--r-- 1 root     root       769 Apr 10  2021 profile
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 profile.d
+-rw-r--r-- 1 root     root      2932 Apr  2  2013 protocols
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 python3
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 python3.9
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc0.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc1.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc2.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc3.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc4.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc5.d
+drwxr-xr-x 2 root     root      4096 Feb  5 11:24 rc6.d
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 rcS.d
+-rw-r--r-- 1 root     root      3281 Sep  6  2021 reportbug.conf
+-rw-r--r-- 1 root     root        52 Feb  6 09:36 resolv.conf
+lrwxrwxrwx 1 root     root        13 Feb 17  2021 rmt -> /usr/sbin/rmt
+-rw-r--r-- 1 root     root       887 Apr  1  2013 rpc
+-rw-r--r-- 1 root     root      1974 Feb 17  2021 rsyslog.conf
+drwxr-xr-x 2 root     root      4096 Feb 17  2021 rsyslog.d
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 runit
+-rw-r--r-- 1 root     root      3662 Dec  3  2021 screenrc
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 security
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 selinux
+-rw-r--r-- 1 root     root     10593 Jan 30  2021 sensors3.conf
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 sensors.d
+-rw-r--r-- 1 root     root     12813 Mar 28  2021 services
+-rw-r----- 1 root     shadow     896 Feb  5 11:24 shadow
+-rw-r----- 1 root     shadow     896 Feb  5 11:24 shadow-
+-rw-r--r-- 1 root     root       146 Dec  3  2021 shells
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 skel
+drwxr-xr-x 4 root     root      4096 Feb  3 14:23 ssh
+drwxr-xr-x 4 root     root      4096 Feb  3 14:23 ssl
+-rw-r--r-- 1 root     root        19 Dec  3  2021 subgid
+-rw-r--r-- 1 root     root        41 Dec  3  2021 subgid-
+-rw-r--r-- 1 root     root        19 Dec  3  2021 subuid
+-rw-r--r-- 1 root     root        41 Dec  3  2021 subuid-
+-rw-r--r-- 1 root     root      3975 Feb 27  2021 sudo.conf
+-r--r----- 1 root     root       669 Feb 27  2021 sudoers
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 sudoers.d
+-rw-r--r-- 1 root     root      6169 Feb 27  2021 sudo_logsrvd.conf
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 sv
+-rw-r--r-- 1 root     root      2355 Apr  6  2021 sysctl.conf
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 sysctl.d
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 sysstat
+drwxr-xr-x 5 root     root      4096 Feb  3 14:23 systemd
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 terminfo
+-rw-r--r-- 1 root     root        16 Feb  3 14:23 timezone
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 tmpfiles.d
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 tuned
+-rw-r--r-- 1 root     root      1260 Jun 16  2020 ucf.conf
+drwxr-xr-x 4 root     root      4096 Feb  3 14:23 udev
+drwxr-xr-x 3 root     root      4096 Dec  3  2021 ufw
+drwxr-xr-x 2 root     root      4096 Feb  3 14:23 update-motd.d
+drwxr-xr-x 2 root     root      4096 Jan  7  2022 vim
+-rw-r--r-- 1 root     root      4942 Jan  9  2021 wgetrc
+drwxr-xr-x 2 root     root      4096 Dec  3  2021 wpa_supplicant
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 X11
+-rw-r--r-- 1 root     root       642 Dec 24  2020 xattr.conf
+drwxr-xr-x 4 root     root      4096 Dec  3  2021 xdg
+
+ ┌── postgres@db01 ── /etc ─
+ └─$ cd postgresql/15/main
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ ls -l
+total 60
+drwxr-xr-x 2 postgres postgres  4096 Feb  5 15:24 conf.d
+-rw-r--r-- 1 postgres postgres   315 Feb  5 15:24 environment
+-rw-r--r-- 1 postgres postgres   143 Feb  5 15:24 pg_ctl.conf
+-rw-r----- 1 postgres postgres  5002 Feb  5 15:24 pg_hba.conf
+-rw-r----- 1 postgres postgres  1636 Feb  5 15:24 pg_ident.conf
+-rw-r--r-- 1 postgres postgres 29716 Feb  5 15:24 postgresql.conf
+-rw-r--r-- 1 postgres postgres   317 Feb  5 15:24 start.conf
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ \du
+4       ./conf.d
+64      .
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+postgres=# \
+invalid command \
+Try \? for help.
+postgres=# \db
+       List of tablespaces
+    Name    |  Owner   | Location
+------------+----------+----------
+ pg_default | postgres |
+ pg_global  | postgres |
+(2 rows)
+
+postgres=# \db+
+                                  List of tablespaces
+    Name    |  Owner   | Location | Access privileges | Options |  Size  | Description
+------------+----------+----------+-------------------+---------+--------+-------------
+ pg_default | postgres |          |                   |         | 22 MB  |
+ pg_global  | postgres |          |                   |         | 531 kB |
+(2 rows)
+
+postgres=# logout
+postgres-# \q
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ mmkdir /pg_data/15/ts1
+-bash: mmkdir: command not found
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ mkdir /pg_data/15/ts1
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ chmod 700 /pg_data/15/ts1
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ ls -l
+total 60
+drwxr-xr-x 2 postgres postgres  4096 Feb  5 15:24 conf.d
+-rw-r--r-- 1 postgres postgres   315 Feb  5 15:24 environment
+-rw-r--r-- 1 postgres postgres   143 Feb  5 15:24 pg_ctl.conf
+-rw-r----- 1 postgres postgres  5002 Feb  5 15:24 pg_hba.conf
+-rw-r----- 1 postgres postgres  1636 Feb  5 15:24 pg_ident.conf
+-rw-r--r-- 1 postgres postgres 29716 Feb  5 15:24 postgresql.conf
+-rw-r--r-- 1 postgres postgres   317 Feb  5 15:24 start.conf
+
+ ┌── postgres@db01 ── /etc/postgresql/15/main ─
+ └─$ cd /pg_data/15/ts1
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ ls -l
+total 0
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# create tablespace ts1
+postgres-# cd ..
+postgres-# \q
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# create tablespace ts1 LOCATION '/pg_data/15/ts1';
+CREATE TABLESPACE
+postgres=# create table mytable (a integer) tablespace ts1;
+CREATE TABLE
+postgres=# insert into tab
+
+postgres=# insert into mytable select gs from generate_series(1,100000) gs;
+INSERT 0 100000
+postgres=# ls
+postgres-# \q
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ ls -l
+total 4
+drwx------ 3 postgres postgres 4096 Feb  6 10:07 PG_15_202209061
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ cd PG_15_202209061/
+
+ ┌── postgres@db01 ── /pg_data/15/ts1/PG_15_202209061 ─
+ └─$ ls -l
+total 4
+drwx------ 2 postgres postgres 4096 Feb  6 10:08 5
+
+ ┌── postgres@db01 ── /pg_data/15/ts1/PG_15_202209061 ─
+ └─$ ls -lh
+total 4.0K
+drwx------ 2 postgres postgres 4.0K Feb  6 10:08 5
+
+ ┌── postgres@db01 ── /pg_data/15/ts1/PG_15_202209061 ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# drop table mytable;
+DROP TABLE
+postgres=# drop tablespace ts1;
+DROP TABLESPACE
+postgres=# history
+postgres-# \q
+
+ ┌── postgres@db01 ── /pg_data/15/ts1/PG_15_202209061 ─
+ └─$ cd /pg_data/15/ts1/
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ ls -l
+total 0
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ \dt+
+-bash: dt+: command not found
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# \
+Display all 106 possibilities? (y or n)
+\!                 \dAf               \dew               \dp                \dy                \gexec             \out               \T
+\?                 \dAo               \df                \dP                \echo              \gset              \password          \timing
+\a                 \dAp               \dF                \dPi               \edit              \gx                \print             \unset
+\C                 \db                \dFd               \dPt               \ef                \help              \prompt            \warn
+\cd                \dc                \dFp               \drds              \elif              \html              \pset              \watch
+\connect           \dC                \dFt               \dRp               \else              \if                \qecho             \write
+\conninfo          \dconfig           \dg                \dRs               \encoding          \include           \quit              \x
+\copy              \dd                \di                \ds                \endif             \include_relative  \reset             \z
+\copyright         \dD                \dl                \dt                \errverbose        \ir                \s
+\crosstabview      \ddp               \dL                \dT                \ev                \list              \set
+\d                 \dE                \dm                \du                \f                 \lo_export         \setenv
+\da                \des               \dn                \dv                \g                 \lo_import         \sf
+\dA                \det               \do                \dx                \gdesc             \lo_list           \sv
+\dAc               \deu               \dO                \dX                \getenv            \lo_unlink         \t
+postgres=# \
+invalid command \
+Try \? for help.
+postgres=# \dt+
+Did not find any relations.
+postgres=# \q
+
+ ┌── postgres@db01 ── /pg_data/15/ts1 ─
+ └─$ logout
+
+ ┌── root@db01 ── ~ ─
+ └─# localectl list-locales
+C.UTF-8
+en_US.UTF-8
+
+ ┌── root@db01 ── ~ ─
+ └─# vim /etc/locale.gen
+
+ ┌── root@db01 ── ~ ─
+ └─# locale-gen
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+  tr_TR.UTF-8... done
+Generation complete.
+
+ ┌── root@db01 ── ~ ─
+ └─# localectl list-locales
+C.UTF-8
+en_US.UTF-8
+tr_TR.UTF-8
+
+ ┌── root@db01 ── ~ ─
+ └─# systemctl restart postgresql@15-main
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    | ICU Locale | Locale Provider |   Access privileges
+-----------+----------+----------+-------------+-------------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+(3 rows)
+
+postgres=# create database project locale = 'tr_TR.UTF-8' template tem
+
+postgres=# create database project locale = 'tr_TR.UTF-8' template template0
+postgres-# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# create database project locale = 'tr_TR.UTF-8' template template0;
+CREATE DATABASE
+postgres=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    | ICU Locale | Locale Provider |   Access privileges
+-----------+----------+----------+-------------+-------------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ project   | postgres | UTF8     | tr_TR.UTF-8 | tr_TR.UTF-8 |            | libc            |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+(4 rows)
+
+postgres=# create database project locale='tr_TR.UTF-8' TEMPLATE template0;
+ERROR:  database "project" already exists
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+
+postgres=# create role pupil superuser login password '123';
+CREATE ROLE
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ pupil     | Superuser                                                  | {}
+
+postgres=# alter system set password_encryption to "scram-sha-256";
+ALTER SYSTEM
+postgres=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ pupil     | Superuser                                                  | {}
+
+postgres=# \db
+       List of tablespaces
+    Name    |  Owner   | Location
+------------+----------+----------
+ pg_default | postgres |
+ pg_global  | postgres |
+(2 rows)
+
+postgres=# select pg_reload_conf();
+ pg_reload_conf
+----------------
+ t
+(1 row)
+
+postgres=# select * from pg_authid;
+postgres=# select * from pg_db_role_setting;
+ setdatabase | setrole | setconfig
+-------------+---------+-----------
+(0 rows)
+
+postgres=# select * from pg_roles;
+postgres=# \d
+Did not find any relations.
+postgres=# \d+
+Did not find any relations.
+postgres=# \d+ pg_roles
+                                     View "pg_catalog.pg_roles"
+     Column     |           Type           | Collation | Nullable | Default | Storage  | Description
+----------------+--------------------------+-----------+----------+---------+----------+-------------
+ rolname        | name                     |           |          |         | plain    |
+ rolsuper       | boolean                  |           |          |         | plain    |
+ rolinherit     | boolean                  |           |          |         | plain    |
+ rolcreaterole  | boolean                  |           |          |         | plain    |
+ rolcreatedb    | boolean                  |           |          |         | plain    |
+ rolcanlogin    | boolean                  |           |          |         | plain    |
+ rolreplication | boolean                  |           |          |         | plain    |
+ rolconnlimit   | integer                  |           |          |         | plain    |
+ rolpassword    | text                     |           |          |         | extended |
+ rolvaliduntil  | timestamp with time zone |           |          |         | plain    |
+ rolbypassrls   | boolean                  |           |          |         | plain    |
+ rolconfig      | text[]                   | C         |          |         | extended |
+ oid            | oid                      |           |          |         | plain    |
+View definition:
+ SELECT pg_authid.rolname,
+    pg_authid.rolsuper,
+    pg_authid.rolinherit,
+    pg_authid.rolcreaterole,
+    pg_authid.rolcreatedb,
+    pg_authid.rolcanlogin,
+    pg_authid.rolreplication,
+    pg_authid.rolconnlimit,
+    '********'::text AS rolpassword,
+    pg_authid.rolvaliduntil,
+    pg_authid.rolbypassrls,
+    s.setconfig AS rolconfig,
+    pg_authid.oid
+   FROM pg_authid
+     LEFT JOIN pg_db_role_setting s ON pg_authid.oid = s.setrole AND s.setdatabase = 0::oid;
+
+postgres=# |c
+postgres-# \c
+You are now connected to database "postgres" as user "postgres".
+postgres-# \c project
+You are now connected to database "project" as user "postgres".
+project-# select pg_import_system_collations('pg_catalog'::regnamespace);
+ERROR:  syntax error at or near "|"
+LINE 1: |c
+        ^
+project=# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# \c project
+You are now connected to database "project" as user "postgres".
+project=# select pg_import_system_collations('pg_catalog'::regnamespace);
+ pg_import_system_collations
+-----------------------------
+                           2
+(1 row)
+
+project=# \db
+       List of tablespaces
+    Name    |  Owner   | Location
+------------+----------+----------
+ pg_default | postgres |
+ pg_global  | postgres |
+(2 rows)
+
+project=# \db+
+                                  List of tablespaces
+    Name    |  Owner   | Location | Access privileges | Options |  Size  | Description
+------------+----------+----------+-------------------+---------+--------+-------------
+ pg_default | postgres |          |                   |         | 29 MB  |
+ pg_global  | postgres |          |                   |         | 531 kB |
+(2 rows)
+
+project=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of
+-----------+------------------------------------------------------------+-----------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ pupil     | Superuser                                                  | {}
+
+project=# \du+
+                                          List of roles
+ Role name |                         Attributes                         | Member of | Description
+-----------+------------------------------------------------------------+-----------+-------------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}        |
+ pupil     | Superuser                                                  | {}        |
+
+project=# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |   Collate   |    Ctype    | ICU Locale | Locale Provider |   Access privileges
+-----------+----------+----------+-------------+-------------+------------+-----------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            |
+ project   | postgres | UTF8     | tr_TR.UTF-8 | tr_TR.UTF-8 |            | libc            |
+ template0 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 |            | libc            | =c/postgres          +
+           |          |          |             |             |            |                 | postgres=CTc/postgres
+(4 rows)
+
+project=# select * from pg_roles;
+project=# select * from pg_roles;
+project=# select * from pg_db_role_setting;
+ setdatabase | setrole | setconfig
+-------------+---------+-----------
+(0 rows)
+
+project=# \d pg_db_role_setting;
+         Table "pg_catalog.pg_db_role_setting"
+   Column    |  Type  | Collation | Nullable | Default
+-------------+--------+-----------+----------+---------
+ setdatabase | oid    |           | not null |
+ setrole     | oid    |           | not null |
+ setconfig   | text[] | C         |          |
+Indexes:
+    "pg_db_role_setting_databaseid_rol_index" PRIMARY KEY, btree (setdatabase, setrole), tablespace "pg_global"
+Tablespace: "pg_global"
+
+project=# select * from pg_db_role_setting;
+ setdatabase | setrole | setconfig
+-------------+---------+-----------
+(0 rows)
+
+project=# select * from pg_authid;
+project=# select * from pg_db_role_setting;
+ setdatabase | setrole | setconfig
+-------------+---------+-----------
+(0 rows)
+
+project=# select * from pg_db_roles;
+ERROR:  relation "pg_db_roles" does not exist
+LINE 1: select * from pg_db_roles;
+                      ^
+project=# select * from pg_roles;
+project=# select * from pg_roles;
+project=#
+project=# select * from pg_collation ;
+project=# select * from pg_collation ;
+project=# select * from pg_authid where rolname = 'pupil';
+project=#
+project=# select * from pg_authid where rolname = 'pupil';
+project=# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ logout
+
+ ┌── root@db01 ── ~ ─
+ └─# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:30:5b:4a brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 brd 10.0.2.255 scope global dynamic enp0s3
+       valid_lft 76266sec preferred_lft 76266sec
+    inet6 fe80::a00:27ff:fe30:5b4a/64 scope link
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 08:00:27:41:60:c3 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.56.101/24 brd 192.168.56.255 scope global enp0s8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fe41:60c3/64 scope link
+       valid_lft forever preferred_lft forever
+
+ ┌── root@db01 ── ~ ─
+ └─# netstat -nlp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      699/sshd: /usr/sbin
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      1515/postgres
+tcp6       0      0 :::22                   :::*                    LISTEN      699/sshd: /usr/sbin
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           563/dhclient
+raw        0      0 0.0.0.0:255             0.0.0.0:*               7           679/atop
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name     Path
+unix  2      [ ACC ]     STREAM     LISTENING     13030    892/systemd          /run/user/1000/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     13039    892/systemd          /run/user/1000/gnupg/S.dirmngr
+unix  2      [ ACC ]     STREAM     LISTENING     13041    892/systemd          /run/user/1000/gnupg/S.gpg-agent.browser
+unix  2      [ ACC ]     STREAM     LISTENING     13043    892/systemd          /run/user/1000/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     13045    892/systemd          /run/user/1000/gnupg/S.gpg-agent.ssh
+unix  2      [ ACC ]     STREAM     LISTENING     13047    892/systemd          /run/user/1000/gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     11506    1/init               /run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     10633    1/init               /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     10635    1/init               /run/systemd/userdb/io.systemd.DynamicUser
+unix  2      [ ACC ]     STREAM     LISTENING     10636    1/init               /run/systemd/io.system.ManagedOOM
+unix  2      [ ACC ]     STREAM     LISTENING     10645    1/init               /run/systemd/fsck.progress
+unix  2      [ ACC ]     STREAM     LISTENING     10653    1/init               /run/systemd/journal/stdout
+unix  2      [ ACC ]     SEQPACKET  LISTENING     10655    1/init               /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     10865    338/systemd-journal  /run/systemd/journal/io.systemd.journal
+unix  2      [ ACC ]     STREAM     LISTENING     19544    1515/postgres        /var/run/postgresql/.s.PGSQL.5432
+
+ ┌── root@db01 ── ~ ─
+ └─# su - posgres
+su: user posgres does not exist or the user entry does not contain all the required fields
+
+ ┌── root@db01 ── ~ ─
+ └─# su - posgresql
+su: user posgresql does not exist or the user entry does not contain all the required fields
+
+ ┌── root@db01 ── ~ ─
+ └─# su - posgre
+su: user posgre does not exist or the user entry does not contain all the required fields
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# select pg_reload_conf();
+ pg_reload_conf
+----------------
+ t
+(1 row)
+
+postgres=# show listen_addresses;
+ listen_addresses
+------------------
+ localhost
+(1 row)
+
+postgres=# alter system set listen_addresses to '0.0.0.0';
+ALTER SYSTEM
+postgres=# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ logout
+
+ ┌── root@db01 ── ~ ─
+ └─# systemctl restart postgresql@15-main
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# show listen_addresses;
+ listen_addresses
+------------------
+ 0.0.0.0
+(1 row)
+
+postgres=# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$
+
+ ┌── postgres@db01 ── ~ ─
+ └─$
+
+ ┌── postgres@db01 ── ~ ─
+ └─$
+
+ ┌── postgres@db01 ── ~ ─
+ └─$
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /etc/postgresql/15/main/pg_hba.conf
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ psql
+psql (15.1 (Debian 15.1-1.pgdg110+1))
+Type "help" for help.
+
+postgres=# select * from pg_hba_file_rules;
+ line_number | type  |   database    | user_name  |   address    |                 netmask                 |  auth_method  | options | error
+-------------+-------+---------------+------------+--------------+-----------------------------------------+---------------+---------+-------
+          90 | local | {all}         | {postgres} |              |                                         | peer          |         |
+          95 | local | {all}         | {all}      |              |                                         | peer          |         |
+          97 | host  | {all}         | {all}      | 127.0.0.1    | 255.255.255.255                         | scram-sha-256 |         |
+          99 | host  | {all}         | {all}      | ::1          | ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff | scram-sha-256 |         |
+         102 | local | {replication} | {all}      |              |                                         | peer          |         |
+         103 | host  | {replication} | {all}      | 127.0.0.1    | 255.255.255.255                         | scram-sha-256 |         |
+         104 | host  | {replication} | {all}      | ::1          | ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff | scram-sha-256 |         |
+         105 | host  | {project}     | {pupil}    | 192.168.56.1 | 255.255.255.255                         | scram-sha-256 |         |
+(8 rows)
+
+postgres=# select pg_reload_conf();
+ pg_reload_conf
+----------------
+ t
+(1 row)
+
+postgres=# \q
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ tail /var/log/postgresql/postgresql-15-main.log
+2023-02-06 14:40:01.268 +03 [2404] LOG:  starting PostgreSQL 15.1 (Debian 15.1-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
+2023-02-06 14:40:01.268 +03 [2404] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2023-02-06 14:40:01.270 +03 [2404] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2023-02-06 14:40:01.280 +03 [2407] LOG:  database system was shut down at 2023-02-06 14:40:00 +03
+2023-02-06 14:40:01.289 +03 [2404] LOG:  database system is ready to accept connections
+2023-02-06 14:45:01.381 +03 [2405] LOG:  checkpoint starting: time
+2023-02-06 14:45:01.405 +03 [2405] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.006 s, sync=0.003 s, total=0.024 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB
+2023-02-06 14:45:57.680 +03 [2483] pupil@project FATAL:  no pg_hba.conf entry for host "192.168.56.1", user "pupil", database "project", SSL encryption
+2023-02-06 14:45:57.686 +03 [2484] pupil@project FATAL:  no pg_hba.conf entry for host "192.168.56.1", user "pupil", database "project", no encryption
+2023-02-06 15:08:30.468 +03 [2404] LOG:  received SIGHUP, reloading configuration files
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_lscluster
+-bash: pg_lscluster: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 online postgres /pg_data/15/main /var/log/postgresql/postgresql-15-main.log
+
+ ┌── postgres@db01 ── ~ ─
+ └─$

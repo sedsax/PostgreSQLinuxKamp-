@@ -1,0 +1,719 @@
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt update
+sudo apt install postgresql-15
+
+/l
+
+Using username "pupil".
+Authenticating with public key "info@cooksoft.com.tr"
+Linux db01 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Sun Feb  5 10:00:08 2023 from 192.168.56.1
+
+ ┌── pupil@db01 ── ~ ─
+ └─$ su - root
+Password:
+
+ ┌── root@db01 ── ~ ─
+ └─# pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 online postgres /pg_data/15/main /var/log/postgresql/postgresql                                                                                        -15-main.log
+
+ ┌── root@db01 ── ~ ─
+ └─# systemctl status postgresql@15-main
+● postgresql@15-main.service - PostgreSQL Cluster 15-main
+     Loaded: loaded (/lib/systemd/system/postgresql@.service; enabled; vendor preset: enabled)
+     Active: active (running) since Sun 2023-02-05 15:47:18 +03; 5min ago
+    Process: 666 ExecStart=/usr/bin/pg_ctlcluster --skip-systemctl-redirect 15-main start (code=exited, status=0/SUCCESS)
+   Main PID: 692 (postgres)
+      Tasks: 6 (limit: 1130)
+     Memory: 40.0M
+        CPU: 480ms
+     CGroup: /system.slice/system-postgresql.slice/postgresql@15-main.service
+             ├─692 /usr/lib/postgresql/15/bin/postgres -D /pg_data/15/main -c config_file=/etc/postgresql/15/main/postgresql.conf
+             ├─693 postgres: 15/main: checkpointer
+             ├─694 postgres: 15/main: background writer
+             ├─699 postgres: 15/main: walwriter
+             ├─700 postgres: 15/main: autovacuum launcher
+             └─701 postgres: 15/main: logical replication launcher
+
+Feb 05 15:47:15 db01 systemd[1]: Starting PostgreSQL Cluster 15-main...
+Feb 05 15:47:18 db01 systemd[1]: Started PostgreSQL Cluster 15-main.
+
+ ┌── root@db01 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/ .bash_profile
+2 files to edit
+
+[1]+  Stopped                 vim /var/lib/postgresql/ .bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/ .bash_profile
+2 files to edit
+
+[2]+  Stopped                 vim /var/lib/postgresql/ .bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/ .bash_profile
+2 files to edit
+
+[3]+  Stopped                 vim /var/lib/postgresql/ .bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/ .bash_profile
+2 files to edit
+
+[4]+  Stopped                 vim /var/lib/postgresql/ .bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/ .bash_profile
+2 files to edit
+
+[5]+  Stopped                 vim /var/lib/postgresql/ .bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/.bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_controldata
+-bash: pg_controldata: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_controldata
+-bash: pg_controldata: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ logout
+There are stopped jobs.
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_waldump
+-bash: pg_waldump: command not found
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ ls
+G
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 online postgres /pg_data/15/main /var/log/postgresql/postgresql                                                                                        -15-main.log
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/.bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ vim /var/lib/postgresql/.bash_profile
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ ls
+G
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ /pg_data/15/main
+-bash: /pg_data/15/main: Is a directory
+
+ ┌── postgres@db01 ── ~ ─
+ └─$ cd /pg_data/15/main
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls
+base    pg_commit_ts  pg_logical    pg_notify    pg_serial     pg_stat      pg_subtrans  pg_twophase  pg_wal   postgresql.auto.conf  postmaster.pid
+global  pg_dynshmem   pg_multixact  pg_replslot  pg_snapshots  pg_stat_tmp  pg_tblspc    PG_VERSION   pg_xact  postmaster.opts
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls -l
+total 84
+drwx------ 5 postgres postgres 4096 Feb  5 15:24 base
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 global
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  5 15:53 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  5 15:23 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  5 15:23 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  5 15:23 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_xact
+-rw------- 1 postgres postgres   88 Feb  5 15:23 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  5 15:47 postmaster.opts
+-rw------- 1 postgres postgres   96 Feb  5 15:47 postmaster.pid
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd global
+
+ ┌── postgres@db01 ── /pg_data/15/main/global ─
+ └─$ ls
+1213      1214  1260      1261      1262      2396      2397  2676  2695  2846  2965  3592  4061  4177  4182  4185  6001  6114  6244  6247             pg_internal.init
+1213_fsm  1232  1260_fsm  1261_fsm  1262_fsm  2396_fsm  2671  2677  2697  2847  2966  3593  4175  4178  4183  4186  6002  6115  6245  pg_control
+1213_vm   1233  1260_vm   1261_vm   1262_vm   2396_vm   2672  2694  2698  2964  2967  4060  4176  4181  4184  6000  6100  6243  6246  pg_filenode.map
+
+ ┌── postgres@db01 ── /pg_data/15/main/global ─
+ └─$ ls -l
+total 536
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1213
+-rw------- 1 postgres postgres 24576 Feb  5 15:24 1213_fsm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1213_vm
+-rw------- 1 postgres postgres     0 Feb  5 15:23 1214
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 1232
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 1233
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1260
+-rw------- 1 postgres postgres 24576 Feb  5 15:24 1260_fsm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1260_vm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1261
+-rw------- 1 postgres postgres 24576 Feb  5 15:24 1261_fsm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1261_vm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1262
+-rw------- 1 postgres postgres 24576 Feb  5 15:24 1262_fsm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 1262_vm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 2396
+-rw------- 1 postgres postgres 24576 Feb  5 15:24 2396_fsm
+-rw------- 1 postgres postgres  8192 Feb  5 15:24 2396_vm
+-rw------- 1 postgres postgres 16384 Feb  5 15:24 2397
+-rw------- 1 postgres postgres 16384 Feb  5 15:24 2671
+-rw------- 1 postgres postgres 16384 Feb  5 15:24 2672
+-rw------- 1 postgres postgres 16384 Feb  5 15:23 2676
+-rw------- 1 postgres postgres 16384 Feb  5 15:23 2677
+-rw------- 1 postgres postgres 16384 Feb  5 15:24 2694
+-rw------- 1 postgres postgres 16384 Feb  5 15:24 2695
+-rw------- 1 postgres postgres 16384 Feb  5 15:23 2697
+-rw------- 1 postgres postgres 16384 Feb  5 15:23 2698
+-rw------- 1 postgres postgres     0 Feb  5 15:23 2846
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 2847
+-rw------- 1 postgres postgres     0 Feb  5 15:23 2964
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 2965
+-rw------- 1 postgres postgres     0 Feb  5 15:23 2966
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 2967
+-rw------- 1 postgres postgres     0 Feb  5 15:23 3592
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 3593
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4060
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4061
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4175
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4176
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4177
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4178
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4181
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4182
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4183
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4184
+-rw------- 1 postgres postgres     0 Feb  5 15:23 4185
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 4186
+-rw------- 1 postgres postgres     0 Feb  5 15:23 6000
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6001
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6002
+-rw------- 1 postgres postgres     0 Feb  5 15:23 6100
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6114
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6115
+-rw------- 1 postgres postgres     0 Feb  5 15:23 6243
+-rw------- 1 postgres postgres     0 Feb  5 15:23 6244
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6245
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6246
+-rw------- 1 postgres postgres  8192 Feb  5 15:23 6247
+-rw------- 1 postgres postgres  8192 Feb  5 15:53 pg_control
+-rw------- 1 postgres postgres   512 Feb  5 15:23 pg_filenode.map
+-rw------- 1 postgres postgres 27484 Feb  5 15:47 pg_internal.init
+
+ ┌── postgres@db01 ── /pg_data/15/main/global ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd base
+
+ ┌── postgres@db01 ── /pg_data/15/main/base ─
+ └─$ ls -l
+total 12
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 1
+drwx------ 2 postgres postgres 4096 Feb  5 15:24 4
+drwx------ 2 postgres postgres 4096 Feb  5 15:24 5
+
+ ┌── postgres@db01 ── /pg_data/15/main/base ─
+ └─$ cd 1
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ ls -l
+total 7536
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 112
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 113
+-rw------- 1 postgres postgres 122880 Feb  5 15:24 1247
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 1247_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 1247_vm
+-rw------- 1 postgres postgres 458752 Feb  5 15:24 1249
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 1249_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 1249_vm
+-rw------- 1 postgres postgres 786432 Feb  5 15:24 1255
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 1255_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 1255_vm
+-rw------- 1 postgres postgres 114688 Feb  5 15:38 1259
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 1259_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 1259_vm
+-rw------- 1 postgres postgres  65536 Feb  5 15:24 13370
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 13370_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13370_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:24 13373
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13374
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13375
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 13375_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13375_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:24 13378
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13379
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13380
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 13380_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13380_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:24 13383
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13384
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13385
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 13385_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13385_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:24 13388
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 13389
+-rw------- 1 postgres postgres      0 Feb  5 15:23 1417
+-rw------- 1 postgres postgres      0 Feb  5 15:23 1418
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 174
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 175
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2187
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2224
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2228
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2328
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2336
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2337
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2579
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2600
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2600_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2600_vm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2601
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2601_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2601_vm
+-rw------- 1 postgres postgres  57344 Feb  5 15:24 2602
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2602_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2602_vm
+-rw------- 1 postgres postgres  40960 Feb  5 15:24 2603
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2603_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2603_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2604
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2605
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2605_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2605_vm
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2606
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2606_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2606_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2607
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2607_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2607_vm
+-rw------- 1 postgres postgres 114688 Feb  5 15:24 2608
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2608_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2608_vm
+-rw------- 1 postgres postgres 360448 Feb  5 15:24 2609
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2609_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2609_vm
+-rw------- 1 postgres postgres  32768 Feb  5 15:24 2610
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2610_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2610_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2611
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2612
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2612_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2612_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2613
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2615
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2615_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2615_vm
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2616
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2616_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2616_vm
+-rw------- 1 postgres postgres 114688 Feb  5 15:24 2617
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2617_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2617_vm
+-rw------- 1 postgres postgres 114688 Feb  5 15:24 2618
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2618_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2618_vm
+-rw------- 1 postgres postgres 196608 Feb  5 15:38 2619
+-rw------- 1 postgres postgres  24576 Feb  5 15:38 2619_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:38 2619_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2620
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2650
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2651
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2652
+-rw------- 1 postgres postgres  49152 Feb  5 15:23 2653
+-rw------- 1 postgres postgres  49152 Feb  5 15:23 2654
+-rw------- 1 postgres postgres  40960 Feb  5 15:23 2655
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2656
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2657
+-rw------- 1 postgres postgres 122880 Feb  5 15:24 2658
+-rw------- 1 postgres postgres  90112 Feb  5 15:24 2659
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2660
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2661
+-rw------- 1 postgres postgres  32768 Feb  5 15:24 2662
+-rw------- 1 postgres postgres  40960 Feb  5 15:24 2663
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2664
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2665
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2666
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2667
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2668
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2669
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2670
+-rw------- 1 postgres postgres  81920 Feb  5 15:24 2673
+-rw------- 1 postgres postgres  65536 Feb  5 15:24 2674
+-rw------- 1 postgres postgres 229376 Feb  5 15:24 2675
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2678
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2679
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2680
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2681
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2682
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2683
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2684
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2685
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2686
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2687
+-rw------- 1 postgres postgres  40960 Feb  5 15:23 2688
+-rw------- 1 postgres postgres  49152 Feb  5 15:23 2689
+-rw------- 1 postgres postgres  90112 Feb  5 15:24 2690
+-rw------- 1 postgres postgres 253952 Feb  5 15:24 2691
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2692
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2693
+-rw------- 1 postgres postgres  40960 Feb  5 15:38 2696
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2699
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2701
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2702
+-rw------- 1 postgres postgres  32768 Feb  5 15:24 2703
+-rw------- 1 postgres postgres  40960 Feb  5 15:24 2704
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2753
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2753_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2753_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2754
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 2755
+-rw------- 1 postgres postgres  40960 Feb  5 15:23 2756
+-rw------- 1 postgres postgres  32768 Feb  5 15:23 2757
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2830
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2831
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2832
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2833
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2834
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2835
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2836
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2836_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2836_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2837
+-rw------- 1 postgres postgres 524288 Feb  5 15:24 2838
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 2838_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 2838_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 2839
+-rw------- 1 postgres postgres  32768 Feb  5 15:38 2840
+-rw------- 1 postgres postgres  24576 Feb  5 15:38 2840_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:38 2840_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:38 2841
+-rw------- 1 postgres postgres      0 Feb  5 15:23 2995
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 2996
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3079
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3079_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3079_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3080
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3081
+-rw------- 1 postgres postgres  40960 Feb  5 15:24 3085
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3118
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3119
+-rw------- 1 postgres postgres  49152 Feb  5 15:24 3164
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3256
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3257
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3258
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3350
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3351
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3379
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3380
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3381
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3394
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3394_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3394_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3395
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3429
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3430
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3431
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3433
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3439
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3440
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3455
+-rw------- 1 postgres postgres 114688 Feb  5 15:24 3456
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3456_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3456_vm
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3466
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3467
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3468
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3501
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3502
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3503
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3534
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3541
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3541_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3541_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 3542
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3574
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3575
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3576
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3596
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3597
+-rw------- 1 postgres postgres      0 Feb  5 15:23 3598
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3599
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3600
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3600_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3600_vm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3601
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3601_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3601_vm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3602
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3602_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3602_vm
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3603
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3603_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3603_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3604
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3605
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 3606
+-rw------- 1 postgres postgres  16384 Feb  5 15:23 3607
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3608
+-rw------- 1 postgres postgres  32768 Feb  5 15:24 3609
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3712
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3764
+-rw------- 1 postgres postgres  24576 Feb  5 15:24 3764_fsm
+-rw------- 1 postgres postgres   8192 Feb  5 15:24 3764_vm
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3766
+-rw------- 1 postgres postgres  16384 Feb  5 15:24 3767
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 3997
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4143
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4144
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4145
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4146
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4147
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4148
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4149
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4150
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4151
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4152
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4153
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4154
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4155
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4156
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4157
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4158
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4159
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4160
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4163
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4164
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4165
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4166
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4167
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4168
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4169
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4170
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4171
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4172
+-rw------- 1 postgres postgres      0 Feb  5 15:23 4173
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 4174
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 5002
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 548
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 549
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6102
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6104
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6106
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6110
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6111
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6112
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6113
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6116
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6117
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6175
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6176
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6228
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6229
+-rw------- 1 postgres postgres      0 Feb  5 15:23 6237
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6238
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 6239
+-rw------- 1 postgres postgres      0 Feb  5 15:23 826
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 827
+-rw------- 1 postgres postgres   8192 Feb  5 15:23 828
+-rw------- 1 postgres postgres    512 Feb  5 15:23 pg_filenode.map
+-rw------- 1 postgres postgres 160044 Feb  5 15:47 pg_internal.init
+-rw------- 1 postgres postgres      3 Feb  5 15:23 PG_VERSION
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd postgres
+-bash: cd: postgres: No such file or directory
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd pg_wal
+-bash: cd: pg_wal: No such file or directory
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main/base ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls -l
+total 84
+drwx------ 5 postgres postgres 4096 Feb  5 15:24 base
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 global
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  5 15:53 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  5 15:23 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  5 15:23 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  5 15:23 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_xact
+-rw------- 1 postgres postgres   88 Feb  5 15:23 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  5 15:47 postmaster.opts
+-rw------- 1 postgres postgres   96 Feb  5 15:47 postmaster.pid
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd pg_wal
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_wal ─
+ └─$ ls -l
+total 16388
+-rw------- 1 postgres postgres 16777216 Feb  5 15:54 000000010000000000000001
+drwx------ 2 postgres postgres     4096 Feb  5 15:23 archive_status
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_wal ─
+ └─$
+
+
+
+
+
+
+
+
+
+
+
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd postgres
+-bash: cd: postgres: No such file or directory
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd pg_wal
+-bash: cd: pg_wal: No such file or directory
+
+ ┌── postgres@db01 ── /pg_data/15/main/base/1 ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main/base ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ ls -l
+total 84
+drwx------ 5 postgres postgres 4096 Feb  5 15:24 base
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 global
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  5 15:53 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  5 15:23 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  5 15:47 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  5 15:23 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  5 15:23 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  5 15:23 pg_xact
+-rw------- 1 postgres postgres   88 Feb  5 15:23 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  5 15:47 postmaster.opts
+-rw------- 1 postgres postgres   96 Feb  5 15:47 postmaster.pid
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd pg_wal
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_wal ─
+ └─$ ls -l
+total 16388
+-rw------- 1 postgres postgres 16777216 Feb  5 15:54 000000010000000000000001
+drwx------ 2 postgres postgres     4096 Feb  5 15:23 archive_status
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_wal ─
+ └─$ cd ..
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd PG_VERSION
+-bash: cd: PG_VERSION: Not a directory
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd PG_VERSION
+-bash: cd: PG_VERSION: Not a directory
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd PG_VERSION
+-bash: cd: PG_VERSION: Not a directory
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cat postmaster.pid
+692
+/pg_data/15/main
+1675601236
+5432
+/var/run/postgresql
+localhost
+   389380         0
+ready
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cat postmaster.opts
+/usr/lib/postgresql/15/bin/postgres "-D" "/pg_data/15/main" "-c" "config_file=/etc/postgresql/15/main/postgresql.conf"
+
+ ┌── postgres@db01 ── /pg_data/15/main ─
+ └─$ cd pg_tblspc
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_tblspc ─
+ └─$ ls -l
+total 0
+
+ ┌── postgres@db01 ── /pg_data/15/main/pg_tblspc ─
+ └─$
