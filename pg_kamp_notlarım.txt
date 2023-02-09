@@ -1,0 +1,252 @@
+https://www.techslang.com/definition/what-is-encoding/
+
+https://unicode-org.github.io/icu/userguide/collation/
+
+https://en.wikipedia.org/wiki/Public_key_infrastructure
+
+https://en.wikipedia.org/wiki/Multiversion_concurrency_control
+
+kernel ne? linux debian farkı ne?
+
+ssh ne işe yarar?
+
+mvcc ne?
+
+public key ne?
+
+kernel linux, debian işletim sistemi
+
+bash?
+
+me@vigo.io
+
+GPG (GNU Privacy Guard) Nedir? 
+
+PGP?
+
+https://www.postgresql.org/docs/current/reference-server.html
+
+locale sonradan değiştirilebilir encoding sonradan değiştirilemez
+
+shared buffer
+
+instance, cluster
+
+oom score linux
+
+bash profile?
+
+replica ??
+
+fsync
+pg_test_fsync
+
+https://www.postgresql.org/docs/current/reference-client.html
+
+backup
+pg_basebackup -> postgresql' in backup' ını alma
+
+meta command
+
+psql = postgresql interactive terminal
+
+https://www.postgresql.org/docs/current/storage-file-layout.html
+
+global tablespace
+default tablespace
+cluster ın default u statik
+
+base = Subdirectory containing per-database subdirectories
+
+https://github.com/postgres/postgres/blob/9f452feeeb830534dc2ce743a2a14b109128326d/src/bin/psql/describe.c#L922
+
+list of database
+
+
+postgresqlin çalışması için data klasörünü ve konfigürasyon dosyasını vermeniz gerekiyor. sadece data klasörünü vermek de yeterli olabilir. sadece konfigürasyonu da verse olurdu dedi Hoca??? debianda ayrı ayrı vermiş. araştır.
+
+https://www.postgresql.org/docs/current/sql-createtablespace.html
+Tablespace aslında pek tercih edilmiyormuş?
+
+collections?
+
+dil özellikleri-> tek tırnak ve çift tırnak farkı, anlamı (ICU, UTF-8 ??)
+
+Supported Versions: Current (15) 
+
+ alter system set password_encryption to "scram-sha-256";
+(bu komutu yazmayacakmışız ama ben yazdım :/)(sadece superuser yapabilir)
+
+pg_monitor ?? (sadece monitoring için, kişilere verilmiyor)
+
+veritabanında View ve Trigger nedir??
+
+ View "pg_catalog.pg_roles"
+
+catolog aynı zamanda bir schema
+
+namespace schema demektir
+
+host-home -> cihaza bağlanma
+
+soket???
+soket bağlantısı??
+TCP/IP protokolü?
+TCP soketi?
+Active UNIX domain sockets (only servers)
+token???
+parsing documents??
+
+dışardan bağlanıyoruz, protokolümüz TCP
+
+https://www.postgresql.org/docs/current/runtime-config-connection.html
+
+SSL encryption
+
+verify-full
+
+shift+g -> vim dosyasında en alt satıra gider
+
+vim dosyasına yazmak için a tuşuna basılır
+yazma modundan çıkmak için esc
+yapılanı kaydedip çıkmak için :wq
+
+ldap
+
+ This file is read on server startup and when the server receives a SIGHUP
+# signal.  If you edit the file on a running system, you have to SIGHUP the
+# server for the changes to take effect, run "pg_ctl reload", or execute
+# "SELECT pg_reload_conf()".  Some parameters, which are marked below,
+# require a server shutdown and restart to take effect.
+
+
+postgresql
+   psql
+      select * from pg_settings;  (diğer kullanıcıları bağlamaz)
+      show all;
+      show work_nem;
+      
+      select * from pg_file_settings;
+      select * from pg_db_role_settings;
+      
+
+select context , count(*) from pg_settings group by 1;
+select context , count(*) from pg_settings group by 1 order by 1;
+
+https://www.postgresql.org/docs/current/view-pg-settings.html
+
+https://www.postgresql.org/docs/current/runtime-config-connection.html
+
+https://www.postgresql.org/docs/current/sql-createrole.html
+
+https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
+
+What is pooling in PostgreSQL?
+Discard ??
+
+postgresql
+  psql
+    select * from pg_file_settings;
+    select * from pg_db_role_setting;
+
+discard all;
+create table my_table(id serial) with (autovacuum_analyze_scale_factor = 0.01);
+alter table my_table set (autovacuum_analyze_scale_factor = 0.02);
+select relname, reloptions from pg_class where reloptions is not null;
+
+----------------
+
+postgresql.conf
+  | -> include..
+  | -> include_dir
+  | -> hba_file
+  | -> ident_file
+
+postgresql.auto.conf
+command line
+database
+user 
+user + database
+
+  | -> table
+  | -> index
+  | -> table space
+
+session
+transaction
+  show ->
+----------------------
+
+Event Trigger ?
+
+'pgcrypto' extension' ı kullanma!!!!
+
+Foreign Data Wrappers ??
+--------
+Postgresql' in Önemli Özellikleri
+ACID
+MVCC
+WAL
+Replication
+Views (Materialized/Updateable)
+Transactions
+------------------------
+Change Data Capture (CDC)
+
+-------
+ Autovacuum, veritabanı verilerinin boşluk ve gereksiz verilerinin sürekli olarak temizlenmesini ve optimize edilmesini sağlayan bir özelliktir.
+
+Belirtilen "autovacuum_analyze_scale_factor" parametresi, veritabanının analiz işlemi için hangi tablo boyutunun tetiklenmesi gerektiğini belirler. Bu parametre, tablo boyutunun belirtilen yüzdesinde (0.02 = %2) veri değiştiğinde autovacuum analiz işlemini tetikler.
+-------
+7 şubat 2023 salı
+
+Schemas
+schema.identifiar -> dediğimizde objeyi buluyoruz
+schema -> aggregation function,komplesks bir iş,  data type önemli,  a=>1,2,<null>       sum(a) = 3 gelir null gelmez
+schema -> collations - kendi collationlarımızı oluşturabiliriz ama advance(ileri seviye) bir iş
+schema -> domain - Etki alanı, temelde isteğe bağlı kısıtlamaları olan bir veri türüdür.
+schema -> full text search, postgresin bir feautreı falan değil, pattern diyebiliriz.
+                  Metin almada, tam metin arama, bilgisayarda depolanan tek bir belgeyi veya tam metin veritabanındaki
+                  bir koleksiyonu arama tekniklerini ifade eder. -> Highlighting results? Parsing documents? stop words?
+schema -> Foreign Tables, ?? 
+schema -> Functions
+schema ->Materialized Views(sanal tablo) -> sanal tabloyu gerçek tabloya çevirir (performans için, makina çok yorulduğu için yavaşlıyor)
+schema -> Operators -             
+schema -> Procedure
+schema -> Sequences - artan veya azalan sırada bir sayı dizisi oluşturan şema nesnesidir. bağımsız bir obje
+schema -> Types, unsigned type = sıfırdan başlar ve değeri 2 katına çıkarır, composite data type
+                                     CREATE TYPE name AS
+                                              ( [ attribute_name data_type [ COLLATE collation ] [, ... ] ] )
+
+                                    CREATE TYPE name AS ENUM
+                                               ( [ 'label' [, ... ] ] )
+
+schema -> Triggers - Tigger yazıyorsanız tasarımda hatanız var demektir?? Deferrable ??
+
+https://www.postgresql.org/docs/9.5/functions-aggregate.html
+https://www.postgresql.org/docs/current/sql-createcollation.html
+https://www.postgresql.org/docs/current/sql-createdomain.html
+https://www.postgresql.org/docs/current/textsearch.html
+https://en.wikipedia.org/wiki/Full-text_search
+https://www.postgresql.org/docs/current/sql-createoperator.html
+https://www.postgresql.org/docs/current/sql-createtype.html
+https://dbfiddle.uk/32U9yEvy
+https://dbfiddle.uk/ToZsaFyZ
+https://www.postgresql.org/docs/current/sql-createtrigger.html
+
+---------------
+LOG...???
+postgresql geçmişe yönelik bir şey tutmaz, istiyosan kendin topla 
+burda log exception, loglarınızı tutmak lazım. querylerin de istatistiklerini tutmak lazım. log biriktirmek diski zorlayabilir. daha eski logları al başka yere koy (postgresten başka yere, 1 hafta pratik kullanım için postgreste kalabilir. biriktikçe zaten sizin de bir şey bulmanız zorlaşır).
+
+ https://www.postgresql.org/docs/current/runtime-config-logging.html
+statement demek sql i çalıştır demek ???
+database işlemleri ramde yapmalı, yapıyor. disk doğrudan kullanılmaz.
+checkpoint??
+log_lock_waits (boolean) --> deadlock?? - Deadlock ya da kilitlenme, iki ya da daha fazla eylemin devam etmek için birbirlerinin bitmesini      beklemesi ve sonuçta ikisinin de devam edememesi durumu. deadlock varsa veritabanında çözemezsiniz, yazılım tasarımda hata var    demektir. Kodun revize edilmesi gerekir. bir yazılımcı deadlock ı nasıl çözmesi gerektiğini bilir.
+log_statement (enum) --> ddl??
+
+https://www.postgresql.org/docs/current/libpq-pgpass.html
+ %APPDATA%\postgresql\pgpass.conf 
+
+
