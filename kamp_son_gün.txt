@@ -1,0 +1,14 @@
+db02
+	rm  /pg_data/15/main/* -r
+
+	basebackup
+	
+	start ....@-main.service
+
+
+db01
+	select * from pg_repliaction_slots;
+
+	
+
+sync 
