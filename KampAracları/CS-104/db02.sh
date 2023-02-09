@@ -1,0 +1,1 @@
+ssh pupil@192.168.56.102 -i PKI\putty-private-key.ppk

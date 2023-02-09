@@ -1,0 +1,1 @@
+@start Utils\putty.exe 192.168.56.104 -l pupil -i PKI\putty-private-key.ppk -ssh
