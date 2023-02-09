@@ -1,0 +1,934 @@
+https://www.techslang.com/definition/what-is-encoding/
+
+https://unicode-org.github.io/icu/userguide/collation/
+
+https://en.wikipedia.org/wiki/Public_key_infrastructure
+
+https://en.wikipedia.org/wiki/Multiversion_concurrency_control
+
+kernel ne? linux debian farkı ne?
+
+ssh ne işe yarar?
+
+mvcc ne?
+
+public key ne?
+
+kernel linux, debian işletim sistemi
+
+bash?
+
+me@vigo.io
+
+GPG (GNU Privacy Guard) Nedir? 
+
+PGP?
+
+https://www.postgresql.org/docs/current/reference-server.html
+
+locale sonradan değiştirilebilir encoding sonradan değiştirilemez
+
+shared buffer
+
+instance, cluster
+
+oom score linux
+
+bash profile?
+
+replica ??
+
+fsync
+pg_test_fsync
+
+https://www.postgresql.org/docs/current/reference-client.html
+
+backup
+pg_basebackup -> postgresql' in backup' ını alma
+
+meta command
+
+psql = postgresql interactive terminal
+
+https://www.postgresql.org/docs/current/storage-file-layout.html
+
+global tablespace
+default tablespace
+cluster ın default u statik
+
+base = Subdirectory containing per-database subdirectories
+
+https://github.com/postgres/postgres/blob/9f452feeeb830534dc2ce743a2a14b109128326d/src/bin/psql/describe.c#L922
+
+list of database
+
+
+postgresqlin çalışması için data klasörünü ve konfigürasyon dosyasını vermeniz gerekiyor. sadece data klasörünü vermek de yeterli olabilir. sadece konfigürasyonu da verse olurdu dedi Hoca??? debianda ayrı ayrı vermiş. araştır.
+
+https://www.postgresql.org/docs/current/sql-createtablespace.html
+Tablespace aslında pek tercih edilmiyormuş?
+
+collections?
+
+dil özellikleri-> tek tırnak ve çift tırnak farkı, anlamı (ICU, UTF-8 ??)
+
+Supported Versions: Current (15) 
+
+ alter system set password_encryption to "scram-sha-256";
+(bu komutu yazmayacakmışız ama ben yazdım :/)(sadece superuser yapabilir)
+
+pg_monitor ?? (sadece monitoring için, kişilere verilmiyor)
+
+veritabanında View ve Trigger nedir??
+
+ View "pg_catalog.pg_roles"
+
+catolog aynı zamanda bir schema
+
+namespace schema demektir
+
+host-home -> cihaza bağlanma
+
+soket???
+soket bağlantısı??
+TCP/IP protokolü?
+TCP soketi?
+Active UNIX domain sockets (only servers)
+token???
+parsing documents??
+
+dışardan bağlanıyoruz, protokolümüz TCP
+
+https://www.postgresql.org/docs/current/runtime-config-connection.html
+
+SSL encryption
+
+verify-full
+
+shift+g -> vim dosyasında en alt satıra gider
+
+vim dosyasına yazmak için a tuşuna basılır
+yazma modundan çıkmak için esc
+yapılanı kaydedip çıkmak için :wq
+
+ldap
+
+ This file is read on server startup and when the server receives a SIGHUP
+# signal.  If you edit the file on a running system, you have to SIGHUP the
+# server for the changes to take effect, run "pg_ctl reload", or execute
+# "SELECT pg_reload_conf()".  Some parameters, which are marked below,
+# require a server shutdown and restart to take effect.
+
+
+postgresql
+   psql
+      select * from pg_settings;  (diğer kullanıcıları bağlamaz)
+      show all;
+      show work_nem;
+      
+      select * from pg_file_settings;
+      select * from pg_db_role_settings;
+      
+
+select context , count(*) from pg_settings group by 1;
+select context , count(*) from pg_settings group by 1 order by 1;
+
+https://www.postgresql.org/docs/current/view-pg-settings.html
+
+https://www.postgresql.org/docs/current/runtime-config-connection.html
+
+https://www.postgresql.org/docs/current/sql-createrole.html
+
+https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/
+
+What is pooling in PostgreSQL?
+Discard ??
+
+postgresql
+  psql
+    select * from pg_file_settings;
+    select * from pg_db_role_setting;
+
+discard all;
+create table my_table(id serial) with (autovacuum_analyze_scale_factor = 0.01);
+alter table my_table set (autovacuum_analyze_scale_factor = 0.02);
+select relname, reloptions from pg_class where reloptions is not null;
+
+----------------
+
+postgresql.conf
+  | -> include..
+  | -> include_dir
+  | -> hba_file
+  | -> ident_file
+
+postgresql.auto.conf
+command line
+database
+user 
+user + database
+
+  | -> table
+  | -> index
+  | -> table space
+
+session
+transaction
+  show ->
+----------------------
+
+Event Trigger ?
+
+'pgcrypto' extension' ı kullanma!!!!
+
+Foreign Data Wrappers ??
+--------
+Postgresql' in Önemli Özellikleri
+ACID
+MVCC
+WAL
+Replication
+Views (Materialized/Updateable)
+Transactions
+------------------------
+Change Data Capture (CDC)
+
+-------
+ Autovacuum, veritabanı verilerinin boşluk ve gereksiz verilerinin sürekli olarak temizlenmesini ve optimize edilmesini sağlayan bir özelliktir.
+
+Belirtilen "autovacuum_analyze_scale_factor" parametresi, veritabanının analiz işlemi için hangi tablo boyutunun tetiklenmesi gerektiğini belirler. Bu parametre, tablo boyutunun belirtilen yüzdesinde (0.02 = %2) veri değiştiğinde autovacuum analiz işlemini tetikler.
+-------
+7 şubat 2023 salı
+
+Schemas
+schema.identifiar -> dediğimizde objeyi buluyoruz
+schema -> aggregation function,komplesks bir iş,  data type önemli,  a=>1,2,<null>       sum(a) = 3 gelir null gelmez
+schema -> collations - kendi collationlarımızı oluşturabiliriz ama advance(ileri seviye) bir iş
+schema -> domain - Etki alanı, temelde isteğe bağlı kısıtlamaları olan bir veri türüdür.
+schema -> full text search, postgresin bir feautreı falan değil, pattern diyebiliriz.
+                  Metin almada, tam metin arama, bilgisayarda depolanan tek bir belgeyi veya tam metin veritabanındaki
+                  bir koleksiyonu arama tekniklerini ifade eder. -> Highlighting results? Parsing documents? stop words?
+schema -> Foreign Tables, ?? 
+schema -> Functions
+schema ->Materialized Views(sanal tablo) -> sanal tabloyu gerçek tabloya çevirir (performans için, makina çok yorulduğu için yavaşlıyor)
+schema -> Operators -             
+schema -> Procedure
+schema -> Sequences - artan veya azalan sırada bir sayı dizisi oluşturan şema nesnesidir. bağımsız bir obje
+schema -> Types, unsigned type = sıfırdan başlar ve değeri 2 katına çıkarır, composite data type
+                                     CREATE TYPE name AS
+                                              ( [ attribute_name data_type [ COLLATE collation ] [, ... ] ] )
+
+                                    CREATE TYPE name AS ENUM
+                                               ( [ 'label' [, ... ] ] )
+
+https://www.postgresql.org/docs/9.5/functions-aggregate.html
+https://www.postgresql.org/docs/current/sql-createcollation.html
+https://www.postgresql.org/docs/current/sql-createdomain.html
+https://www.postgresql.org/docs/current/textsearch.html
+https://en.wikipedia.org/wiki/Full-text_search
+https://www.postgresql.org/docs/current/sql-createoperator.html
+https://www.postgresql.org/docs/current/sql-createtype.html
+https://dbfiddle.uk/32U9yEvy
+https://dbfiddle.uk/ToZsaFyZ
+https://www.postgresql.org/docs/current/sql-createtrigger.html
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+create type device_type as (
+	brand text,
+	model text
+);
+
+create table my_devices (
+	id integer primary key,
+	device_name text,
+	device_type device_type
+);
+
+insert into my_devices values (
+	1,
+	'iPhone',
+	('apple', '14promax')
+);
+
+
+select id, device_name, (device_type).brand, (device_type).model from my_devices where (device_type).brand='apple'
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+create table something(
+	id integer primary key,
+	devices my_devices
+);
+
+insert into something values (
+	1,
+	(1,'iPhone',('apple', '14promax'))
+);
+
+select my_devices from my_devices;
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+LOG...???
+postgresql geçmişe yönelik bir şey tutmaz, istiyosan kendin topla 
+burda log exception, loglarınızı tutmak lazım. querylerin de istatistiklerini tutmak lazım. log biriktirmek diski zorlayabilir. daha eski logları al başka yere koy (postgresten başka yere, 1 hafta pratik kullanım için postgreste kalabilir. biriktikçe zaten sizin de bir şey bulmanız zorlaşır).
+
+ https://www.postgresql.org/docs/current/runtime-config-logging.html
+statement demek sql i çalıştır demek ???
+database işlemleri ramde yapmalı, yapıyor. disk doğrudan kullanılmaz.
+checkpoint??
+log_lock_waits (boolean) --> deadlock?? - Deadlock ya da kilitlenme, iki ya da daha fazla eylemin devam etmek için birbirlerinin bitmesini      beklemesi ve sonuçta ikisinin de devam edememesi durumu. deadlock varsa veritabanında çözemezsiniz, yazılım tasarımda hata var    demektir. Kodun revize edilmesi gerekir. bir yazılımcı deadlock ı nasıl çözmesi gerektiğini bilir.
+log_statement (enum) --> ddl??
+
+https://www.postgresql.org/docs/current/libpq-pgpass.html
+ %APPDATA%\postgresql\pgpass.conf 
+
+
+-------------------------------
+Using username "pupil".
+Authenticating with public key "info@cooksoft.com.tr"
+Linux db02 5.10.0-21-amd64 #1 SMP Debian 5.10.162-1 (2023-01-21) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Fri Feb  3 17:38:02 2023 from 192.168.56.1
+
+ ┌── pupil@db02 ── ~ ─
+ └─$ sudo su - root
+
+ ┌── root@db02 ── ~ ─
+ └─#  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc~
+
+ ┌── root@db02 ── ~ ─
+ └─# wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  120  echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg                                              main" > /etc/apt/sources.list.d/pgdg.list
+  121  cat  /etc/apt/sources.list.d/pgdg.list
+  122  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | su                                             do apt-key add -
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=DA1T
+-----END PGP PUBLIC KEY BLOCK-----
+-bash: 120: command not found
+-bash: 121: command not found
+-bash: 122: command not found
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s                                             ee apt-key(8)).
+gpg: no valid OpenPGP data found.
+
+ ┌── root@db02 ── ~ ─
+ └─#  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=DA1T
+-----END PGP PUBLIC KEY BLOCK-----
+
+ ┌── root@db02 ── ~ ─
+ └─# echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg m                                             ain" > /etc/apt/sources.list.d/pgdg.list
+
+ ┌── root@db02 ── ~ ─
+ └─#  cat  /etc/apt/sources.list.d/pgdg.list
+deb http://apt.postgresql.org/pub/repos/apt bullseye-pgdg main
+
+ ┌── root@db02 ── ~ ─
+ └─# wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo                                              apt-key add -
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s                                             ee apt-key(8)).
+OK
+
+ ┌── root@db02 ── ~ ─
+ └─# apt update
+Get:1 http://security.debian.org/debian-security bullseye-security InRelease [48.4 kB]
+Hit:2 http://deb.debian.org/debian bullseye InRelease
+Get:3 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg InRelease [91.7 kB]
+Get:4 http://deb.debian.org/debian bullseye-updates InRelease [44.1 kB]
+Get:5 http://security.debian.org/debian-security bullseye-security/main Sources [184 kB                                      ]
+Get:6 http://security.debian.org/debian-security bullseye-security/main amd64 Packages                                       [222 kB]
+Get:7 http://security.debian.org/debian-security bullseye-security/main Translation-en                                       [145 kB]
+Get:8 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 Packages [268 kB                                      ]
+Fetched 1,003 kB in 2s (540 kB/s)
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+2 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+ ┌── root@db02 ── ~ ─
+ └─# apt upgrade
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  libpq5 python3-psycopg2
+2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+Need to get 315 kB of archives.
+After this operation, 85.0 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 libpq5 amd64 15.                                      1-1.pgdg110+1 [183 kB]
+Get:2 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 python3-psycopg2                                       amd64 2.9.5-1.pgdg110+1 [132 kB]
+Fetched 315 kB in 1s (245 kB/s)
+Reading changelogs... Done
+(Reading database ... 44748 files and directories currently installed.)
+Preparing to unpack .../libpq5_15.1-1.pgdg110+1_amd64.deb ...
+Unpacking libpq5:amd64 (15.1-1.pgdg110+1) over (13.9-0+deb11u1) ...
+Preparing to unpack .../python3-psycopg2_2.9.5-1.pgdg110+1_amd64.deb ...
+Unpacking python3-psycopg2 (2.9.5-1.pgdg110+1) over (2.8.6-2) ...
+Setting up libpq5:amd64 (15.1-1.pgdg110+1) ...
+Setting up python3-psycopg2 (2.9.5-1.pgdg110+1) ...
+Processing triggers for libc-bin (2.31-13+deb11u5) ...
+
+ ┌── root@db02 ── ~ ─
+ └─# apt install postgresql-15
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libllvm11 libxslt1.1 libz3-4 postgresql-client-15 postgresql-client-common
+  postgresql-common ssl-cert
+Suggested packages:
+  postgresql-doc-15
+The following NEW packages will be installed:
+  libllvm11 libxslt1.1 libz3-4 postgresql-15 postgresql-client-15
+  postgresql-client-common postgresql-common ssl-cert
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Need to get 43.5 MB of archives.
+After this operation, 170 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 postgresql-clien                                      t-common all 246.pgdg110+1 [92.4 kB]
+Get:2 http://deb.debian.org/debian bullseye/main amd64 ssl-cert all 1.1.0+nmu1 [21.0 kB                                      ]
+Get:3 http://deb.debian.org/debian bullseye/main amd64 libz3-4 amd64 4.8.10-1 [6,949 kB                                      ]
+Get:4 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 postgresql-commo                                      n all 246.pgdg110+1 [235 kB]
+Get:5 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 postgresql-clien                                      t-15 amd64 15.1-1.pgdg110+1 [1,686 kB]
+Get:6 http://apt.postgresql.org/pub/repos/apt bullseye-pgdg/main amd64 postgresql-15 am                                      d64 15.1-1.pgdg110+1 [16.3 MB]
+Get:7 http://deb.debian.org/debian bullseye/main amd64 libllvm11 amd64 1:11.0.1-2 [17.9                                       MB]
+Get:8 http://deb.debian.org/debian bullseye/main amd64 libxslt1.1 amd64 1.1.34-4+deb11u                                      1 [240 kB]
+Fetched 43.5 MB in 4s (12.3 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package postgresql-client-common.
+(Reading database ... 44747 files and directories currently installed.)
+Preparing to unpack .../0-postgresql-client-common_246.pgdg110+1_all.deb ...
+Unpacking postgresql-client-common (246.pgdg110+1) ...
+Selecting previously unselected package ssl-cert.
+Preparing to unpack .../1-ssl-cert_1.1.0+nmu1_all.deb ...
+Unpacking ssl-cert (1.1.0+nmu1) ...
+Selecting previously unselected package postgresql-common.
+Preparing to unpack .../2-postgresql-common_246.pgdg110+1_all.deb ...
+Adding 'diversion of /usr/bin/pg_config to /usr/bin/pg_config.libpq-dev by postgresql-c                                      ommon'
+Unpacking postgresql-common (246.pgdg110+1) ...
+Selecting previously unselected package libz3-4:amd64.
+Preparing to unpack .../3-libz3-4_4.8.10-1_amd64.deb ...
+Unpacking libz3-4:amd64 (4.8.10-1) ...
+Selecting previously unselected package libllvm11:amd64.
+Preparing to unpack .../4-libllvm11_1%3a11.0.1-2_amd64.deb ...
+Unpacking libllvm11:amd64 (1:11.0.1-2) ...
+Selecting previously unselected package libxslt1.1:amd64.
+Preparing to unpack .../5-libxslt1.1_1.1.34-4+deb11u1_amd64.deb ...
+Unpacking libxslt1.1:amd64 (1.1.34-4+deb11u1) ...
+Selecting previously unselected package postgresql-client-15.
+Preparing to unpack .../6-postgresql-client-15_15.1-1.pgdg110+1_amd64.deb ...
+Unpacking postgresql-client-15 (15.1-1.pgdg110+1) ...
+Selecting previously unselected package postgresql-15.
+Preparing to unpack .../7-postgresql-15_15.1-1.pgdg110+1_amd64.deb ...
+Unpacking postgresql-15 (15.1-1.pgdg110+1) ...
+Setting up postgresql-client-common (246.pgdg110+1) ...
+Setting up postgresql-client-15 (15.1-1.pgdg110+1) ...
+update-alternatives: using /usr/share/postgresql/15/man/man1/psql.1.gz to provide /usr/                                      share/man/man1/psql.1.gz (psql.1.gz) in auto mode
+Setting up libz3-4:amd64 (4.8.10-1) ...
+Setting up libllvm11:amd64 (1:11.0.1-2) ...
+Setting up ssl-cert (1.1.0+nmu1) ...
+Setting up postgresql-common (246.pgdg110+1) ...
+Adding user postgres to group ssl-cert
+
+Creating config file /etc/postgresql-common/createcluster.conf with new version
+Building PostgreSQL dictionaries from installed myspell/hunspell packages...
+Removing obsolete dictionary files:
+'/etc/apt/trusted.gpg.d/apt.postgresql.org.gpg' -> '/usr/share/postgresql-common/pgdg/a                                      pt.postgresql.org.gpg'
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql.service → /lib/s                                      ystemd/system/postgresql.service.
+Setting up libxslt1.1:amd64 (1.1.34-4+deb11u1) ...
+Setting up postgresql-15 (15.1-1.pgdg110+1) ...
+Creating new PostgreSQL cluster 15/main ...
+/usr/lib/postgresql/15/bin/initdb -D /var/lib/postgresql/15/main --auth-local peer --au                                      th-host scram-sha-256 --no-instructions
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/15/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Europe/Istanbul
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+update-alternatives: using /usr/share/postgresql/15/man/man1/postmaster.1.gz to provide                                       /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode
+Processing triggers for man-db (2.9.4-2) ...
+Processing triggers for libc-bin (2.31-13+deb11u5) ...
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_lscluster
+-bash: pg_lscluster: command not found
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_lsclusters
+Ver Cluster Port Status Owner    Data directory              Log file
+15  main    5432 online postgres /var/lib/postgresql/15/main /var/log/postgresql/postgr                                      esql-15-main.log
+
+ ┌── root@db02 ── ~ ─
+ └─# which pg_lsclusters
+/usr/bin/pg_lsclusters
+
+ ┌── root@db02 ── ~ ─
+ └─# vim /usr/bin/pg_lsclusters
+
+ ┌── root@db02 ── ~ ─
+ └─#  mkdir -p /pg_data/15/
+
+ ┌── root@db02 ── ~ ─
+ └─#  mkdir -p /pg_data/15/main
+
+ ┌── root@db02 ── ~ ─
+ └─# chown -R postgres: /pg_data
+
+ ┌── root@db02 ── ~ ─
+ └─# chmod 700 -R /pg_data
+
+ ┌── root@db02 ── ~ ─
+ └─#  cd /pg_data/15/main
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# pg_dropcluster 15 main
+Error: This cluster is still running. Stop it or supply the --stop option
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# pg_dropcluster 15 main --stop
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# pg_createcluster 15 main -D /pg_data/15/main -- --data-checksums
+Creating new PostgreSQL cluster 15/main ...
+/usr/lib/postgresql/15/bin/initdb -D /pg_data/15/main --auth-local peer --auth-host scram-sha-256 --no-instructions --data-checksums
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "en_US.UTF-8".
+The default database encoding has accordingly been set to "UTF8".
+The default text search configuration will be set to "english".
+
+Data page checksums are enabled.
+
+fixing permissions on existing directory /pg_data/15/main ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Europe/Istanbul
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 down   postgres /pg_data/15/main /var/log/postgresql/postgresql-15-main.log
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# systemctl start postgresql@15-main
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# systemctl status postgresql@15-main
+● postgresql@15-main.service - PostgreSQL Cluster 15-main
+     Loaded: loaded (/lib/systemd/system/postgresql@.service; enabled-runtime; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-07 16:49:09 +03; 16s ago
+    Process: 4742 ExecStart=/usr/bin/pg_ctlcluster --skip-systemctl-redirect 15-main start (code=exited, status=0/SUCCESS)
+   Main PID: 4747 (postgres)
+      Tasks: 6 (limit: 1130)
+     Memory: 17.8M
+        CPU: 396ms
+     CGroup: /system.slice/system-postgresql.slice/postgresql@15-main.service
+             ├─4747 /usr/lib/postgresql/15/bin/postgres -D /pg_data/15/main -c config_file=/etc/postgresql/15/main/postgresq>
+             ├─4748 postgres: 15/main: checkpointer
+             ├─4749 postgres: 15/main: background writer
+             ├─4751 postgres: 15/main: walwriter
+             ├─4752 postgres: 15/main: autovacuum launcher
+             └─4753 postgres: 15/main: logical replication launcher
+
+Feb 07 16:49:06 db02 systemd[1]: Starting PostgreSQL Cluster 15-main...
+Feb 07 16:49:09 db02 systemd[1]: Started PostgreSQL Cluster 15-main.
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# vim /var/lib/postgresql/.bash_profile
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# logout
+
+ ┌── pupil@db02 ── ~ ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── pupil@db02 ── ~ ─
+ └─$ sudo su - root
+
+ ┌── root@db02 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ cd $PGDATA
+
+ ┌── postgres@db02 ── /pg_data/15/main ─
+ └─$ logout
+
+ ┌── root@db02 ── ~ ─
+ └─# systemctl enable postgresql@15-main
+Created symlink /etc/systemd/system/multi-user.target.wants/postgresql@15-main.service → /lib/systemd/system/postgresql@.service.
+
+ ┌── root@db02 ── ~ ─
+ └─# vi /etc/postgresql/15/main/pg_hba.conf
+
+ ┌── root@db02 ── ~ ─
+ └─# su - postgres
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ vi /etc/postgresql/15/main/pg_hba.conf
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ logout
+
+ ┌── root@db02 ── ~ ─
+ └─# systemctl status postgresql@15-main
+● postgresql@15-main.service - PostgreSQL Cluster 15-main
+     Loaded: loaded (/lib/systemd/system/postgresql@.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-02-07 16:49:09 +03; 12min ago
+   Main PID: 4747 (postgres)
+      Tasks: 6 (limit: 1130)
+     Memory: 19.0M
+        CPU: 972ms
+     CGroup: /system.slice/system-postgresql.slice/postgresql@15-main.service
+             ├─4747 /usr/lib/postgresql/15/bin/postgres -D /pg_data/15/main -c config_file=/etc/postgresql/15/main/postgresq>
+             ├─4748 postgres: 15/main: checkpointer
+             ├─4749 postgres: 15/main: background writer
+             ├─4751 postgres: 15/main: walwriter
+             ├─4752 postgres: 15/main: autovacuum launcher
+             └─4753 postgres: 15/main: logical replication launcher
+
+Feb 07 16:49:06 db02 systemd[1]: Starting PostgreSQL Cluster 15-main...
+Feb 07 16:49:09 db02 systemd[1]: Started PostgreSQL Cluster 15-main.
+
+ ┌── root@db02 ── ~ ─
+ └─# systemctl stop postgresql@15-main
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 down   postgres /pg_data/15/main /var/log/postgresql/postgresql-15-main.log
+
+ ┌── root@db02 ── ~ ─
+ └─# cd $PGDATA
+
+ ┌── root@db02 ── ~ ─
+ └─# cd pg_data/15/main
+-bash: cd: pg_data/15/main: No such file or directory
+
+ ┌── root@db02 ── ~ ─
+ └─# cd /pg_data/15/main
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# ls -l
+total 80
+drwx------ 5 postgres postgres 4096 Feb  7 16:48 base
+drwx------ 2 postgres postgres 4096 Feb  7 16:52 global
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_commit_ts
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_dynshmem
+drwx------ 4 postgres postgres 4096 Feb  7 17:02 pg_logical
+drwx------ 4 postgres postgres 4096 Feb  7 16:48 pg_multixact
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_notify
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_replslot
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_serial
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_snapshots
+drwx------ 2 postgres postgres 4096 Feb  7 17:02 pg_stat
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_stat_tmp
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_subtrans
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_tblspc
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_twophase
+-rw------- 1 postgres postgres    3 Feb  7 16:48 PG_VERSION
+drwx------ 3 postgres postgres 4096 Feb  7 16:48 pg_wal
+drwx------ 2 postgres postgres 4096 Feb  7 16:48 pg_xact
+-rw------- 1 postgres postgres   88 Feb  7 16:48 postgresql.auto.conf
+-rw------- 1 postgres postgres  119 Feb  7 16:49 postmaster.opts
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 down   postgres /pg_data/15/main /var/log/postgresql/postgresql-15-main.log
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# localectl list-locales
+C.UTF-8
+en_US.UTF-8
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# vim /etc/local.gen
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# locale-gen
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+Generation complete.
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# localectl list-locales
+C.UTF-8
+en_US.UTF-8
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# vim /etc/local.gen
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# cd root
+-bash: cd: root: No such file or directory
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# su - root
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_c
+pg_config         pg_conftool       pg_createcluster  pg_ctlcluster
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_clusters
+-bash: pg_clusters: command not found
+
+ ┌── root@db02 ── ~ ─
+ └─# pg_lsclusters
+Ver Cluster Port Status Owner    Data directory   Log file
+15  main    5432 down   postgres /pg_data/15/main /var/log/postgresql/postgresql-15-main.log
+
+ ┌── root@db02 ── ~ ─
+ └─#  localectl list-locales
+C.UTF-8
+en_US.UTF-8
+
+ ┌── root@db02 ── ~ ─
+ └─#  vim /etc/local.gen
+
+ ┌── root@db02 ── ~ ─
+ └─#  vim /etc/locale.gen
+
+ ┌── root@db02 ── ~ ─
+ └─# locale.gen
+-bash: locale.gen: command not found
+
+ ┌── root@db02 ── ~ ─
+ └─# locale-gen
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+  tr_TR.UTF-8... done
+Generation complete.
+
+ ┌── root@db02 ── ~ ─
+ └─# logout
+
+ ┌── root@db02 ── /pg_data/15/main ─
+ └─# logout
+
+ ┌── pupil@db02 ── ~ ─
+ └─$ su - postgres
+Password:
+su: Authentication failure
+
+ ┌── pupil@db02 ── ~ ─
+ └─$ sudo su
+root@db02:/home/pupil# logout
+bash: logout: not login shell: use `exit'
+root@db02:/home/pupil# cd ..
+root@db02:/home# cd ..
+root@db02:/# cd ..
+root@db02:/# logout
+bash: logout: not login shell: use `exit'
+root@db02:/# cd ..
+root@db02:/# logout
+bash: logout: not login shell: use `exit'
+root@db02:/# su - postgres
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ vim ~/.pgpass
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ vim ~/.pgpass
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ chmod 600 ~/.pgpass
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ cd $PGDATA
+
+ ┌── postgres@db02 ── /pg_data/15/main ─
+ └─$ cd
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ cd
+
+ ┌── postgres@db02 ── ~ ─
+ └─$ ls -la
+total 24
+drwxr-xr-x  2 postgres postgres 4096 Feb  7 17:28 .
+drwxr-xr-x 26 root     root     4096 Feb  7 16:43 ..
+-rw-------  1 postgres postgres   64 Feb  7 17:01 .bash_history
+-rw-r--r--  1 root     root       76 Feb  7 16:55 .bash_profile
+-rw-------  1 postgres postgres   35 Feb  7 17:28 .pgpass
+-rw-------  1 postgres postgres 2047 Feb  7 17:28 .viminfo
+
+ ┌── postgres@db02 ── ~ ─
+ └─$
